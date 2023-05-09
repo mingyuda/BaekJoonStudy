@@ -8,14 +8,35 @@ public class Third {
 	public static void main(String[] args){
 		Scanner scan = new Scanner(System.in);
 		
-		int A = scan.nextInt();
-		int sum = 0;
-		for(int i = 1; i <= A; i++) {
-			sum  = i + sum;
-		}
-		System.out.println(sum);
+		int totalPrice = scan.nextInt();
+		int kinds = scan.nextInt();
 		
-		//test
+		int A[] = new int[kinds];
+		int B[] = new int[kinds];
+		
+		int total = 0;
+		for(int i = 0; i < kinds; i++) {
+			A[i] = scan.nextInt();
+			B[i] = scan.nextInt();
+			
+			total = A[i] * B[i] + total;
+		}
+//		System.out.println(total);
+		if(totalPrice == total) {
+			System.out.println("Yes");
+		}else {
+			System.out.println("No");
+		}
+		
+		
+		
+//		int A = scan.nextInt();
+//		int sum = 0;
+//		for(int i = 1; i <= A; i++) {
+//			sum  = i + sum;
+//		}
+//		System.out.println(sum);
+		
 		
 		
 		
