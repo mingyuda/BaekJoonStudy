@@ -1,32 +1,58 @@
 package practice;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+//import java.util.Scanner;
 
 
 public class Third {
 
-	public static void main(String[] args){
-		Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
 		
-		int totalPrice = scan.nextInt();
-		int kinds = scan.nextInt();
-		
-		int A[] = new int[kinds];
-		int B[] = new int[kinds];
-		
-		int total = 0;
-		for(int i = 0; i < kinds; i++) {
-			A[i] = scan.nextInt();
-			B[i] = scan.nextInt();
+		int len = Integer.parseInt(br.readLine());
+		// 얘는 한줄만 있어서 그냥 들고오면 됨
+		// 반복문 안에 들어와야 한다
+		for(int i =0; i < len; i++) {
+			st = new StringTokenizer(br.readLine());
+			int A = Integer.parseInt(st.nextToken());
+			int B = Integer.parseInt(st.nextToken());
+			// 얘네는 여러개라 쪼개서 들고옴
 			
-			total = A[i] * B[i] + total;
+			bw.write(A+B + "\n"); //문자열로 바뀜
 		}
-//		System.out.println(total);
-		if(totalPrice == total) {
-			System.out.println("Yes");
-		}else {
-			System.out.println("No");
-		}
+		bw.flush();	
+		
+		
+		
+//		Scanner scan = new Scanner(System.in);
+//		
+//		int totalPrice = scan.nextInt();
+//		int kinds = scan.nextInt();
+//		
+//		int A[] = new int[kinds];
+//		int B[] = new int[kinds];
+//		
+//		int total = 0;
+//		for(int i = 0; i < kinds; i++) {
+//			A[i] = scan.nextInt();
+//			B[i] = scan.nextInt();
+//			
+//			total = A[i] * B[i] + total;
+//		}
+////		System.out.println(total);
+//		if(totalPrice == total) {
+//			System.out.println("Yes");
+//		}else {
+//			System.out.println("No");
+//		}
 		
 		
 		
