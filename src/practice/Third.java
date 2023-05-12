@@ -8,27 +8,124 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 //import java.util.Scanner;
-
+// br.readLine()이 EOF를 만나면 null을 반환합니다. 
+// 따라서 StringTokenizer 선언 시 NullPointer 에러가 생기는 것이죠. 
+// 저같은 경우는 보통 이렇게 씁니다.
 
 public class Third {
 
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringTokenizer st;
 		
-		int len = Integer.parseInt(br.readLine());
-		// 얘는 한줄만 있어서 그냥 들고오면 됨
-		// 반복문 안에 들어와야 한다
-		for(int i =0; i < len; i++) {
-			st = new StringTokenizer(br.readLine());
+		
+		StringTokenizer st;
+		String s;
+		
+		while((s=br.readLine()) != null){
+			st = new StringTokenizer(s);
 			int A = Integer.parseInt(st.nextToken());
 			int B = Integer.parseInt(st.nextToken());
-			// 얘네는 여러개라 쪼개서 들고옴
-			
-			bw.write(A+B + "\n"); //문자열로 바뀜
+
+			bw.write((A+B) + "\n");
 		}
-		bw.flush();	
+		bw.flush();
+		bw.close();
+		
+		//ctrl + z 하면 EOF End Of File !
+		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	
+//		StringTokenizer st;
+//		st = new StringTokenizer(br.readLine());
+//		int t = Integer.parseInt(st.nextToken());
+//		String A = "*";
+//
+//		for(int i = t; i > 0; i--) {
+//			String B = "";	
+//			for(int z = 1; z < i; z++){
+//				B = B + " ";
+//			}
+//			System.out.println(B + A);
+//			A = A + "*";
+//		}
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	
+//		StringTokenizer st;
+//		st = new StringTokenizer(br.readLine());
+//		int t = Integer.parseInt(st.nextToken());
+//		String A = "";
+//		for(int i = t; i > 0; i--) {
+//			A = "";
+//			for(int z = 0; z < i; z++) {
+//				A = A + "*";
+//			}
+//			System.out.println(A);
+//		
+//			
+//		}
+		
+		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//	
+//		StringTokenizer st;
+//		st = new StringTokenizer(br.readLine());
+//		int t = Integer.parseInt(st.nextToken());
+//		String A = "*";
+//		for(int i = 0; i < t; i++) {
+//			
+//			
+//			System.out.println(A);
+//			
+//			A = A + "*";
+//			
+//		}
+		
+		
+		
+		
+		
+		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		StringTokenizer st;
+//		
+//		int len = Integer.parseInt(br.readLine());
+//		for(int i =0; i < len; i++) {
+//			st = new StringTokenizer(br.readLine());
+//			int A = Integer.parseInt(st.nextToken());
+//			int B = Integer.parseInt(st.nextToken());
+//			// 얘네는 여러개라 쪼개서 들고옴
+//			
+//			bw.write("Case #"+ (i + 1) + ": " + A + " + " + B + " = " + (A+B) + "\n"); //문자열로 바뀜
+//		}
+//		bw.flush();
+		
+		
+		
+		
+		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		StringTokenizer st;
+//		
+//		int len = Integer.parseInt(br.readLine());
+//		// 얘는 한줄만 있어서 그냥 들고오면 됨
+//		// 반복문 안에 들어와야 한다
+//		for(int i =0; i < len; i++) {
+//			st = new StringTokenizer(br.readLine());
+//			int A = Integer.parseInt(st.nextToken());
+//			int B = Integer.parseInt(st.nextToken());
+//			// 얘네는 여러개라 쪼개서 들고옴
+//			
+//			bw.write(A+B + "\n"); //문자열로 바뀜
+//		}
+//		bw.flush();	
 		
 		
 		
