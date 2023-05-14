@@ -9,19 +9,37 @@ public class Fourth {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int X = Integer.parseInt(st.nextToken());
 		
-		int t = Integer.parseInt(br.readLine());
-		int arr[] = new int [t];
-		int count = 0;
-		StringTokenizer st = new StringTokenizer(br.readLine(), " "); // 위치에 따라 에러 메세지가 뜨네 
-		int search = Integer.parseInt(br.readLine());
+		StringTokenizer st2 = new StringTokenizer(br.readLine()); //띄어쓰기 기준으로 끊는듯
 		
-		for(int i = 0; i < t; i++) {
-			arr[i] = Integer.parseInt(st.nextToken());
-			if(arr[i] == search) {
-				count++;
+		for(int i = 0; i < N ; i++) {
+			int Y = Integer.parseInt(st2.nextToken()); // 따로 사용해야
+			
+			if(X > Y) {
+				System.out.print(Y + " ");
 			}
 		}
-		System.out.println(count);
+		
+		
+		
+		
+		
+		
+//		
+//		int arr[] = new int [t];
+//		int count = 0;
+//		StringTokenizer st = new StringTokenizer(br.readLine(), " "); // 위치에 따라 에러 메세지가 뜨네 
+//		int search = Integer.parseInt(br.readLine());
+//		
+//		for(int i = 0; i < t; i++) {
+//			arr[i] = Integer.parseInt(st.nextToken());
+//			if(arr[i] == search) {
+//				count++;
+//			}
+//		}
+//		System.out.println(count);
 	}
 }
