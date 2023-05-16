@@ -9,23 +9,45 @@ public class Fourth {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringTokenizer st;
 		
-		int len = Integer.parseInt(st.nextToken());
-		int Max = - 1000001;
-		int Min = 1000001;
-		StringTokenizer st2 = new StringTokenizer(br.readLine());
-		for(int i = 0; i < len; i++) {
-			int X = Integer.parseInt(st2.nextToken());
-			if(X > Max) {
-				Max = X;
-			}
-			if(X < Min) {
-				Min = X;
+		int arr [] = new int[9];
+		int Max = 0;
+		int seq = 0;
+		
+		for(int i = 0; i < arr.length; i++) {
+			st = new StringTokenizer(br.readLine());
+			arr[i] = Integer.parseInt(st.nextToken());
+			if(arr[i] > Max) {
+				Max = arr[i];
+				seq = i + 1;
 			}
 		}
-		System.out.println(Min);
 		System.out.println(Max);
+		System.out.println(seq);
+		
+		
+		
+		
+		
+		
+		
+//		
+//		int len = Integer.parseInt(st.nextToken());
+//		int Max = - 1000001;
+//		int Min = 1000001;
+//		StringTokenizer st2 = new StringTokenizer(br.readLine());
+//		for(int i = 0; i < len; i++) {
+//			int X = Integer.parseInt(st2.nextToken());
+//			if(X > Max) {
+//				Max = X;
+//			}
+//			if(X < Min) {
+//				Min = X;
+//			}
+//		}
+//		System.out.println(Min);
+//		System.out.println(Max);
 		
 		
 		
