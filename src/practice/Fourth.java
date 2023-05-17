@@ -3,28 +3,75 @@ package practice;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Fourth {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st;
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		int arr [] = new int[9];
-		int Max = 0;
-		int seq = 0;
+		int n = Integer.parseInt(st.nextToken()); // 바구니 번호
+		int[] N = new int[n];
+		int M = Integer.parseInt(st.nextToken()); // 공 넣는 횟수
 		
-		for(int i = 0; i < arr.length; i++) {
-			st = new StringTokenizer(br.readLine());
-			arr[i] = Integer.parseInt(st.nextToken());
-			if(arr[i] > Max) {
-				Max = arr[i];
-				seq = i + 1;
-			}
-		}
-		System.out.println(Max);
-		System.out.println(seq);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		int n = Integer.parseInt(st.nextToken()); // 바구니 번호
+//		int[] N = new int[n];
+//		int M = Integer.parseInt(st.nextToken()); // 공 넣는 횟수
+//		
+//		for(int q = 0; q < M; q++) {
+//			StringTokenizer st2 = new StringTokenizer(br.readLine());
+//			int i = Integer.parseInt(st2.nextToken());
+//			int j = Integer.parseInt(st2.nextToken());
+//			int k = Integer.parseInt(st2.nextToken());
+//			for(int t = i - 1; t < j; t++) {
+//				N[t] = k; 
+//			}
+//		}
+//		for(int i = 0; i < N.length; i++) {
+//			System.out.print(N[i]);
+//			System.out.print(" ");
+//			
+//		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		int arr [] = new int[9];
+//		int Max = 0;
+//		int seq = 0;
+//		
+//		for(int i = 0; i < arr.length; i++) {
+//			st = new StringTokenizer(br.readLine());
+//			arr[i] = Integer.parseInt(st.nextToken());
+//			if(arr[i] > Max) {
+//				Max = arr[i];
+//				seq = i + 1;
+//			}
+//		}
+//		System.out.println(Max);
+//		System.out.println(seq);
 		
 		
 		
