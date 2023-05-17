@@ -14,12 +14,29 @@ public class Fourth {
 		
 		int n = Integer.parseInt(st.nextToken()); // 바구니 번호
 		int[] N = new int[n];
-		int M = Integer.parseInt(st.nextToken()); // 공 넣는 횟수
+		int M = Integer.parseInt(st.nextToken()); // 공 바꾸는 횟수
+		
+		int temp = 0;
+		
+		for(int i = 0; i < N.length; i++) {
+			N[i] = i + 1;
+		}
 		
 		
+		for(int k = 0; k < M; k++) {
+			StringTokenizer st2 = new StringTokenizer(br.readLine());
+			int i = Integer.parseInt(st2.nextToken());
+			int j = Integer.parseInt(st2.nextToken());
+			
+			temp = N[i - 1];
+			N[i - 1] = N[j - 1];
+			N[j - 1] = temp;
+		}
 		
-		
-		
+		for(int i = 0; i< N.length; i++) {
+			System.out.print(N[i]);
+			System.out.print(" ");
+		}
 		
 		
 		
