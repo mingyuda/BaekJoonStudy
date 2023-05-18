@@ -3,44 +3,74 @@ package practice;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class Fourth {
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+	public static void main(String[] args) {
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		StringTokenizer st;
+//		st = new StringTokenizer(br.readLine());
 		
-		int n = Integer.parseInt(st.nextToken()); // 바구니 번호
-		int[] N = new int[n];
-		int M = Integer.parseInt(st.nextToken()); // 공 바꾸는 횟수
+		Scanner scan = new Scanner(System.in);
 		
-		int temp = 0;
 		
-		for(int i = 0; i < N.length; i++) {
-			N[i] = i + 1;
+		int [] N = new int[30];
+		int [] B = new int[30];
+		for(int i = 0; i < 28; i++) {
+			int n = scan.nextInt();
+			N[i] = n;
 		}
 		
-		
-		for(int k = 0; k < M; k++) {
-			StringTokenizer st2 = new StringTokenizer(br.readLine());
-			int i = Integer.parseInt(st2.nextToken());
-			int j = Integer.parseInt(st2.nextToken());
+		for(int i = 1; i <= 30; i++) {
+			B[i - 1] = i;
+		}
+
+		for(int i = 0; i < 30; i++) {
+			for(int j = 0; j < 30; j++) {
+				if(B[j] == N[i]) {
+					B[j] = 0;
+				}
+			}
+		}
+
+		for(int i = 0; i < 30; i++) {
+			if(B[i] != 0) {
+				System.out.println(B[i]);
+			}
 			
-			temp = N[i - 1];
-			N[i - 1] = N[j - 1];
-			N[j - 1] = temp;
-		}
-		
-		for(int i = 0; i< N.length; i++) {
-			System.out.print(N[i]);
-			System.out.print(" ");
 		}
 		
 		
-		
-		
+//		int n = Integer.parseInt(st.nextToken()); // 바구니 번호
+//		int M = Integer.parseInt(st.nextToken()); // 공 바꾸는 횟수
+//		
+//		int temp = 0;
+//		
+//		for(int i = 0; i < N.length; i++) {
+//			N[i] = i + 1;
+//		}
+//		
+//		
+//		for(int k = 0; k < M; k++) {
+//			StringTokenizer st2 = new StringTokenizer(br.readLine());
+//			int i = Integer.parseInt(st2.nextToken());
+//			int j = Integer.parseInt(st2.nextToken());
+//			
+//			temp = N[i - 1];
+//			N[i - 1] = N[j - 1];
+//			N[j - 1] = temp;
+//		}
+//		
+//		for(int i = 0; i< N.length; i++) {
+//			System.out.print(N[i]);
+//			System.out.print(" ");
+//		}
 		
 		
 		
