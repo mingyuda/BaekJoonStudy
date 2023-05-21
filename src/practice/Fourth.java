@@ -1,50 +1,95 @@
 package practice;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class Fourth {
 
-	public static void main(String[] args) {
-//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//		StringTokenizer st;
-//		st = new StringTokenizer(br.readLine());
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		int len = Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		st = new StringTokenizer(br.readLine());
 		
-		Scanner scan = new Scanner(System.in);
+		double max = 0;
+		double arr [] = new double[len];
 		
-		
-		int [] N = new int[30];
-		int [] B = new int[30];
-		for(int i = 0; i < 28; i++) {
-			int n = scan.nextInt();
-			N[i] = n;
-		}
-		
-		for(int i = 1; i <= 30; i++) {
-			B[i - 1] = i;
-		}
-
-		for(int i = 0; i < 30; i++) {
-			for(int j = 0; j < 30; j++) {
-				if(B[j] == N[i]) {
-					B[j] = 0;
-				}
-			}
-		}
-
-		for(int i = 0; i < 30; i++) {
-			if(B[i] != 0) {
-				System.out.println(B[i]);
+		for(int i = 0; i < len; i++) {
+			
+			double A = Integer.parseInt(st.nextToken());
+			arr[i] = A;
+			if(max < arr[i]) {
+				max = arr[i];
 			}
 			
 		}
+		
+		
+		for(int i = 0; i < len; i++) {
+			// 왜 이런걸까 arr이 int면 0이 됨!!
+			arr[i] = (arr[i]/max) * 100;
+		}
+		
+		double sum = 0;
+		for(int i = 0; i < len; i++) {
+			sum = arr[i] + sum;
+		}
+//		System.out.println(sum/len);
+		bw.write(String.valueOf(sum/len));
+		bw.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		StringTokenizer st;
+//		st = new StringTokenizer(br.readLine());
+//
+//		Scanner scan = new Scanner(System.in);
+//		
+//		
+//		int [] N = new int[30];
+//		int [] B = new int[30];
+//		for(int i = 0; i < 28; i++) {
+//			int n = scan.nextInt();
+//			N[i] = n;
+//		}
+//		
+//		for(int i = 1; i <= 30; i++) {
+//			B[i - 1] = i;
+//		}
+//
+//		for(int i = 0; i < 30; i++) {
+//			for(int j = 0; j < 30; j++) {
+//				if(B[j] == N[i]) {
+//					B[j] = 0;
+//				}
+//			}
+//		}
+//
+//		for(int i = 0; i < 30; i++) {
+//			if(B[i] != 0) {
+//				System.out.println(B[i]);
+//			}
+//			
+//		}
 		
 		
 //		int n = Integer.parseInt(st.nextToken()); // 바구니 번호
