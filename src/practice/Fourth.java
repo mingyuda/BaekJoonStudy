@@ -15,16 +15,15 @@ public class Fourth {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int len = Integer.parseInt(br.readLine());
 		StringTokenizer st;
-		st = new StringTokenizer(br.readLine());
 		
 		double max = 0;
 		double arr [] = new double[len];
 		
 		for(int i = 0; i < len; i++) {
-			
+			st = new StringTokenizer(br.readLine());
 			double A = Integer.parseInt(st.nextToken());
 			arr[i] = A;
 			if(max < arr[i]) {
@@ -43,10 +42,10 @@ public class Fourth {
 		for(int i = 0; i < len; i++) {
 			sum = arr[i] + sum;
 		}
-//		System.out.println(sum/len);
-		bw.write(String.valueOf(sum/len));
-		bw.close();
-		
+		System.out.println(sum/len);
+//		bw.write(String.valueOf(sum/len));
+//		bw.close();
+//		
 		
 		
 		
@@ -208,10 +207,10 @@ public class Fourth {
 		
 		
 		
-//		
+//		int t = Integer.parseInt(br.readLine()); 
 //		int arr[] = new int [t];
 //		int count = 0;
-//		StringTokenizer st = new StringTokenizer(br.readLine(), " "); // 위치에 따라 에러 메세지가 뜨네 
+//		StringTokenizer st = new StringTokenizer(br.readLine()); // 위치에 따라 에러 메세지가 뜨네 
 //		int search = Integer.parseInt(br.readLine());
 //		
 //		for(int i = 0; i < t; i++) {
