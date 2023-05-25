@@ -7,22 +7,50 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Fifth {
 	 public static void main(String[] args) throws Exception {
+		 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	        
+	        int count = 1;
+	        String sentence = br.readLine();
+	        ArrayList<String> set = new ArrayList<String>();
+	        for(int i = 0; i < sentence.length(); i++) {
+	        	set.add(sentence.substring(i,i+1));
+	        }
+	        System.out.println(set);
+	        
+	        for(int i = 0; i < set.size(); i++) {
+	        	if(set.get(i).equals(" ") &&( i == 0 || i == set.size() - 1)) {
+	        	}else if(set.get(i).equals(" ")) {
+	        		count++;
+	        	}
+	        }
+	        System.out.println(count);
 	        
 	        
 	        
 	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
+//
+//	        int len = Integer.parseInt(br.readLine());
+//	        
+//	        for(int i = 0; i < len; i++) {
+//	        	StringTokenizer st = new StringTokenizer(br.readLine());
+//
+//	        	int A = Integer.parseInt(st.nextToken());
+//	        	String B = st.nextToken();
+//	        	
+//	        	for(int j = 0; j < B.length(); j++) {
+//	        		for(int k = 0; k < A; k++) {
+//	        			System.out.print(B.substring(j, j+1));
+//	        		}
+//	        	}
+//	        	System.out.println();
+//	        }
+
+	
 	        
 	        
 	 }
