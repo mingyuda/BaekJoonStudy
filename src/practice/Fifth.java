@@ -12,23 +12,79 @@ import java.util.StringTokenizer;
 public class Fifth {
 	 public static void main(String[] args) throws Exception {
 		 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	        StringTokenizer st = new StringTokenizer(br.readLine());
+	        int A = Integer.parseInt(st.nextToken()); 
+	        int B = Integer.parseInt(st.nextToken()); 
 	        
-	        int count = 1;
-	        String sentence = br.readLine();
-	        ArrayList<String> set = new ArrayList<String>();
-	        for(int i = 0; i < sentence.length(); i++) {
-	        	set.add(sentence.substring(i,i+1));
+	        //int에서 String으로
+	        String[] arr = new String[3];
+	        for(int i = 0; i < 3 ; i++) {
+	        	String temp = "";
+	        	temp = A % 10 + temp;
+	        	arr[i] = temp;
+	        	A = A / 10;
 	        }
-	        System.out.println(set);
+	        String[] arr2 = new String[3];
+	        for(int i = 0; i < 3 ; i++) {
+	        	String temp = "";
+	        	temp = B % 10 + temp;
+	        	arr2[i] = temp;
+	        	B = B / 10;
+	        }
 	        
-	        for(int i = 0; i < set.size(); i++) {
-	        	if(set.get(i).equals(" ") &&( i == 0 || i == set.size() - 1)) {
-	        	}else if(set.get(i).equals(" ")) {
-	        		count++;
-	        	}
+
+	        //Sting에서 Array로
+	        String AS = new String();
+	        for(int i = arr.length - 1; i >= 0; i--) {
+	        	AS = arr[i] + AS;
 	        }
-	        System.out.println(count);
+	        
+	        String BS = new String();
+	        for(int i = arr.length - 1; i >= 0; i--) {
+	        	BS = arr2[i] + BS;
+	        }
+	       
+	        A = Integer.parseInt(AS);
+	        B = Integer.parseInt(BS);
+	        if(A > B) {
+	        	System.out.println(A);
+	        }else {
+	        	System.out.println(B);
+	        }
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+	        
+//	        int count = 1;
+//	        String sentence = br.readLine();
+//	        ArrayList<String> set = new ArrayList<String>();
+//	        for(int i = 0; i < sentence.length(); i++) {
+//	        	set.add(sentence.substring(i,i+1));
+//	        }
+//	        System.out.println(set);
+//	        
+//	        for(int i = 0; i < set.size(); i++) {
+//	        	if(set.get(i).equals(" ") && i == 0) {
+//	        	}else if(set.get(i).equals(" ")) {
+//	        		count++;
+//	        	}
+//	        	
+//	        	if(i == (set.size() - 1) && set.get(i).equals(" ")) {
+//	        		count--;
+//	        	}
+//	        	
+//	        	
+//	        }
+//	        System.out.println(count);
 	        
 	        
 	        
