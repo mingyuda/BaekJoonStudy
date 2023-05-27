@@ -8,61 +8,103 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
+import java.util.stream.IntStream;
+
+
 
 public class Fifth {
 	 public static void main(String[] args) throws Exception {
 		 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	        StringTokenizer st = new StringTokenizer(br.readLine());
-	        int A = Integer.parseInt(st.nextToken()); 
-	        int B = Integer.parseInt(st.nextToken()); 
+		 	String A = "";
+		 	while((A = br.readLine()) != null) {
+		 		System.out.println(A);
+
+		 	}
+		 	//stringTokenizer는 분리 즉, 띄어쓰기가 되어있는 친구들 분리!
+		 	
+		 	
+		 	
+		 	
+		 	
+//		 	String A =br.readLine();
+//		 	int count = 0;
+//		 	char arr[] = new char[A.length()];		
+//		 	for(int i = 0; i < A.length(); i++) {		 		
+//		 		arr[i] = A.charAt(i);
+//		 	}
+//		 	for(int i = 0; i < arr.length; i++) {		 		
+//		 		if(arr[i] >= 'W') {
+//		 			count += 10;
+//		 		}else if(arr[i] >= 'T') {
+//		 			count += 9;
+//		 		}else if(arr[i] >= 'P') {
+//		 			count += 8;
+//		 		}else if(arr[i] >= 'M') {
+//		 			count += 7;
+//		 		}else if(arr[i] >= 'J') {
+//		 			count += 6;
+//		 		}else if(arr[i] >= 'G') {
+//		 			count += 5;
+//		 		}else if(arr[i] >= 'D') {
+//		 			count += 4;
+//		 		}else if(arr[i] >= 'A') {
+//		 			count += 3;
+//		 		}
+//		 		
+//		 	}
+//		 	
+//		 	System.out.println(count);
+		 	
+		 	
+
+		 	
+		 	
+		 	
+//	        StringTokenizer st = new StringTokenizer(br.readLine());
+//	        int A = Integer.parseInt(st.nextToken()); 
+//	        int B = Integer.parseInt(st.nextToken()); 
+//	        
+//	        //int에서 String으로
+//	        String[] arr = new String[3];
+//	        for(int i = 0; i < 3 ; i++) {
+//	        	String temp = "";
+//	        	temp = A % 10 + temp;
+//	        	arr[i] = temp;
+//	        	A = A / 10;
+//	        }
+//	        String[] arr2 = new String[3];
+//	        for(int i = 0; i < 3 ; i++) {
+//	        	String temp = "";
+//	        	temp = B % 10 + temp;
+//	        	arr2[i] = temp;
+//	        	B = B / 10;
+//	        }
+//	        
+//
+//	        //Sting에서 Array로
+//	        String AS = new String();
+//	        for(int i = arr.length - 1; i >= 0; i--) {
+//	        	AS = arr[i] + AS;
+//	        }
+//	        
+//	        String BS = new String();
+//	        for(int i = arr.length - 1; i >= 0; i--) {
+//	        	BS = arr2[i] + BS;
+//	        }
+//	       
+//	        A = Integer.parseInt(AS);
+//	        B = Integer.parseInt(BS);
+//	        if(A > B) {
+//	        	System.out.println(A);
+//	        }else {
+//	        	System.out.println(B);
+//	        }
 	        
-	        //int에서 String으로
-	        String[] arr = new String[3];
-	        for(int i = 0; i < 3 ; i++) {
-	        	String temp = "";
-	        	temp = A % 10 + temp;
-	        	arr[i] = temp;
-	        	A = A / 10;
-	        }
-	        String[] arr2 = new String[3];
-	        for(int i = 0; i < 3 ; i++) {
-	        	String temp = "";
-	        	temp = B % 10 + temp;
-	        	arr2[i] = temp;
-	        	B = B / 10;
-	        }
+	        
+	        
+	        
 	        
 
-	        //Sting에서 Array로
-	        String AS = new String();
-	        for(int i = arr.length - 1; i >= 0; i--) {
-	        	AS = arr[i] + AS;
-	        }
-	        
-	        String BS = new String();
-	        for(int i = arr.length - 1; i >= 0; i--) {
-	        	BS = arr2[i] + BS;
-	        }
-	       
-	        A = Integer.parseInt(AS);
-	        B = Integer.parseInt(BS);
-	        if(A > B) {
-	        	System.out.println(A);
-	        }else {
-	        	System.out.println(B);
-	        }
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
 	        
 //	        int count = 1;
 //	        String sentence = br.readLine();
