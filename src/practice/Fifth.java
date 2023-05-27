@@ -13,13 +13,29 @@ import java.util.stream.IntStream;
 
 
 public class Fifth {
+	static int sum = 1;
+	public static int Factorial(int fact) {
+		if(fact > 0) {
+			sum = fact * Factorial(fact - 1);	
+		}
+		return sum;
+	}
+	
+	
 	 public static void main(String[] args) throws Exception {
 		 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		 	String A = "";
-		 	while((A = br.readLine()) != null) {
-		 		System.out.println(A);
-
-		 	}
+		 	int A = Integer.parseInt(br.readLine());
+		 	System.out.println(Factorial(A));
+		 	
+		 	
+		 	
+		 	
+		 	
+//		 	String A = "";
+//		 	while((A = br.readLine()) != null) {
+//		 		System.out.println(A);
+//
+//		 	}
 		 	//stringTokenizer는 분리 즉, 띄어쓰기가 되어있는 친구들 분리!
 		 	
 		 	
@@ -152,6 +168,11 @@ public class Fifth {
 	        
 	        
 	 }
+
+	private static int Factortal(int a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 	        
 	        
