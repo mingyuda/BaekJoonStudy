@@ -11,51 +11,93 @@ import java.util.StringTokenizer;
 public class Sixth {
 
 	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		String A = br.readLine().toUpperCase();
+		Scanner scan = new Scanner(System.in);
+		int len = scan.nextInt();
 		
-		char arr[] = new char[26]; 
-		int[] answer = new int[26];
-		for(char i = 'A'; i <= 'Z'; i++) {
-			arr[i - 65] = i;
-		}
 		
-		for(int i = 0 ; i < A.length(); i++) {
-			for(int j = 0; j < arr.length; j++) {
-				if(A.charAt(i) == arr[j]) {
-					answer[j] = answer[j] + 1;
+		for(int i = 0; i < len; i++) {
+			double average = 0;
+			double sum = 0;
+			double figure = scan.nextInt();
+			double[] arr = new double[(int) figure];			
+			for(int j = 0; j < figure; j++) {
+				int score = scan.nextInt();
+				sum = score + sum;
+				arr[j] = score;
+			}
+			average = sum / figure;
+			double avgSum = 0;
+			for(int k = 0; k < arr.length; k++) {
+				if(arr[k] > average) {
+					avgSum += 1;
 				}
 			}
+			double answer = (avgSum / figure) * 100;
+			System.out.println(String.format("%.3f", answer) + "%");
+						
 		}
 		
-		int Max = -1;
-		int temp = 0;
-				
-		for(int i = 0; i < answer.length; i++) {
-			if(answer[i] > Max) {
-				Max = answer[i];
-				temp = i;
-			}
-		}
-		
-		answer[temp] = 0;
 		
 		
-		for(int i = 0; i < answer.length; i++) {
-			if(A.length() == 1) {
-				System.out.println(arr[temp]);
-				break;
-			}
-			if(answer[i] == Max) {
-				System.out.println("?");
-				break;
-			}
-			if(i == answer.length - 1) {
-				System.out.println(arr[temp]);
-			}
-		}
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		String A = br.readLine().toUpperCase();
+//		
+//		char arr[] = new char[26]; 
+//		int[] answer = new int[26];
+//		for(char i = 'A'; i <= 'Z'; i++) {
+//			arr[i - 65] = i;
+//		}
+//		
+//		for(int i = 0 ; i < A.length(); i++) {
+//			for(int j = 0; j < arr.length; j++) {
+//				if(A.charAt(i) == arr[j]) {
+//					answer[j] = answer[j] + 1;
+//				}
+//			}
+//		}
+//		
+//		int Max = -1;
+//		int temp = 0;
+//				
+//		for(int i = 0; i < answer.length; i++) {
+//			if(answer[i] > Max) {
+//				Max = answer[i];
+//				temp = i;
+//			}
+//		}
+//		
+//		answer[temp] = 0;
+//		
+//		
+//		for(int i = 0; i < answer.length; i++) {
+//			if(A.length() == 1) {
+//				System.out.println(arr[temp]);
+//				break;
+//			}
+//			if(answer[i] == Max) {
+//				System.out.println("?");
+//				break;
+//			}
+//			if(i == answer.length - 1) {
+//				System.out.println(arr[temp]);
+//			}
+//		}
+//		
 		
 		
 		
