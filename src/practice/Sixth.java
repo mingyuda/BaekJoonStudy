@@ -4,6 +4,7 @@ package practice;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -14,30 +15,53 @@ public class Sixth {
 //		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		Scanner scan = new Scanner(System.in);
-		int len = scan.nextInt();
+		String input = scan.next();
+		boolean check = false;
+		int count = 0;
 		
+		ArrayList<String> croa = new ArrayList<String>();
+		croa.add("c=");
+		croa.add("c-");
+		croa.add("dz=");
+		croa.add("d-");
+		croa.add("lj");
+		croa.add("nj");
+		croa.add("s=");
+		croa.add("z=");
 		
-		for(int i = 0; i < len; i++) {
-			double average = 0;
-			double sum = 0;
-			double figure = scan.nextInt();
-			double[] arr = new double[(int) figure];			
-			for(int j = 0; j < figure; j++) {
-				int score = scan.nextInt();
-				sum = score + sum;
-				arr[j] = score;
-			}
-			average = sum / figure;
-			double avgSum = 0;
-			for(int k = 0; k < arr.length; k++) {
-				if(arr[k] > average) {
-					avgSum += 1;
+		for(int i = 0; i < input.length(); i++) {
+			for(int j = 0; j < croa.size(); j++) {
+				if(input.charAt(i) == 'd' && i <= input.length() - 3) {
+					if(input.charAt(i + 1) == croa.get(2).charAt(1) && 
+						input.charAt(i + 2) == croa.get(2).charAt(2)) {
+						i = i + 2;
+						count++;
+						check = true;
+						break;
+					}
 				}
-			}
-			double answer = (avgSum / figure) * 100;
-			System.out.println(String.format("%.3f", answer) + "%");
-						
-		}
+			if(i != input.length() - 1) {
+				if(input.charAt(i) == croa.get(j).charAt(0) &&
+					input.charAt(i + 1) == croa.get(j).charAt(1) && j!=2) {
+					i++;
+					count++;
+					check = true;
+					break;
+				}
+				
+			}else{
+                break;
+            }	
+				
+				
+			} if(!check){
+                count++;
+            }else{
+                check = false;
+            }
+        }
+        System.out.print(count);
+    
 		
 		
 		
@@ -49,11 +73,40 @@ public class Sixth {
 		
 		
 		
+//		int A[] = {1,2,3,4};
+//		
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		
+//		arr.add(1);
+//		arr.add(2);
+//		arr.add(3);
+//		arr.forEach((output) -> {System.out.println(output);});
+
+		
+//		for(int i = 0; i < len; i++) {
+//			double average = 0;
+//			double sum = 0;
+//			double figure = scan.nextInt();
+//			double[] arr = new double[(int) figure];			
+//			for(int j = 0; j < figure; j++) {
+//				int score = scan.nextInt();
+//				sum = score + sum;
+//				arr[j] = score;
+//			}
+//			average = sum / figure;
+//			double avgSum = 0;
+//			for(int k = 0; k < arr.length; k++) {
+//				if(arr[k] > average) {
+//					avgSum += 1;
+//				}
+//			}
+//			double answer = (avgSum / figure) * 100;
+//			System.out.println(String.format("%.3f", answer) + "%");
+//						
+//		}
 		
 		
-		
-		
-		
+
 		
 //		String A = br.readLine().toUpperCase();
 //		
