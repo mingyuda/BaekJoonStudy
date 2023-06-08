@@ -13,8 +13,82 @@ public class Sixth {
 
 	public static void main(String[] args) throws IOException {
 //		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
 		Scanner scan = new Scanner(System.in);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 실패
+//		int len = scan.nextInt();
+//		int total = 0;
+//		char alphabet[] = new char[26];
+//		int compare [] = new int [26];	
+//		int num = 0;
+//		for(char i = 'a'; i <= 'z'; i++) {
+//			alphabet[num] = i;
+//			compare[num] = 0;
+//			num++;
+//			
+//		}
+//		
+//		for(int i = 0; i < len ; i++) {
+//			String input = scan.next();
+//			if(input.length() == 1) {
+//				compare[0] = 1;
+//			}
+//			for(int index = 0; index < input.length() -1; index++) {
+//				for(int j = 0; j < 26; j++) {
+//					if(input.charAt(index) == alphabet[j]) {
+//						compare[j]++;
+//						if(input.charAt(index) == input.charAt(index + 1)) {
+//							index++;
+//						}
+//					}
+//				}
+//				
+//			}
+//			
+//			System.out.println(Arrays.toString(compare));
+//			
+//			int count = 0;
+//			for(int k = 0; k < compare.length; k++) {
+//				if(compare[k] != 0 && compare[k] != 1) {
+//					count = 0;
+//					break;
+//				}else if (compare[k] == 1){
+//					count++;
+//				}
+//			}
+//			
+//			if(count != 0) {
+//				total++;
+//				System.out.println(total);
+//			}
+//			
+//			//초기화
+//			for(int c = 0; c < compare.length; c++) {
+//				compare[c] = 0;
+//			}
+//			
+//		}
+//		
+//		
+//		
+//		System.out.println(total);
+		
+		
+		
+		
+
 		String input = scan.next();
 		boolean check = false;
 		int count = 0;
@@ -61,7 +135,7 @@ public class Sixth {
             }
         }
         System.out.print(count);
-    
+//    
 		
 		
 		

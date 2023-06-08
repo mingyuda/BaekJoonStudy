@@ -4,7 +4,7 @@ package practice;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class step07 {
+public class Step07 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
