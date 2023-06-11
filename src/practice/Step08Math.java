@@ -9,13 +9,26 @@ public class Step08Math {
 	public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
 	
-	int input = scan.nextInt();
+	int len = scan.nextInt();
 	int num = 4;
-	for(int i = 0; i < input; i++) {
-		num = num * 4 - (num - (i+1));
-		System.out.println(num);
-	}
+	int num2 = 4;
 	
+	for(int i = 0; i < len; i++) {
+		num = num * 4 - (num2 + num2 - 1);
+		num2 = (num2 - 1) * 2;
+	}
+	System.out.println(num);
+	
+	
+	
+	
+//	int input = scan.nextInt();
+//	int num = 4;
+//	for(int i = 0; i < input; i++) {
+//		num = num * 4 - (num - (i+1));
+//		System.out.println(num);
+//	}
+//	
 	
 	
 	
