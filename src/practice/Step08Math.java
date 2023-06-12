@@ -8,16 +8,74 @@ import java.util.Scanner;
 public class Step08Math {
 	public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
-	
-	int len = scan.nextInt();
-	int num = 4;
-	int num2 = 4;
-	
-	for(int i = 0; i < len; i++) {
-		num = num * 4 - (num2 + num2 - 1);
-		num2 = (num2 - 1) * 2;
+	int input = scan.nextInt();
+	int i = 0;
+	// 맨윗값 기준으로 i가 분모에 들어갈 값
+	while(input > 0) {
+		i++;
+		input -= i;
 	}
-	System.out.println(num);
+	input = Math.abs(input);
+	String arr[] = new String[i];
+	System.out.println(input);
+	int loc = i;
+	//짝수 내려가고 홀수 올라가고
+	if(i % 2 == 0) {	
+		for(int j = 0; j < loc; j++) {
+			arr[j] = i + "/" + (j + 1);
+			i--;
+		}
+	}else {
+		for(int j = 0; j < loc; j++) {
+			arr[j] = (j+1) + "/" + i;
+			i--;
+		}
+	}
+	
+	System.out.println(Arrays.deepToString(arr));
+	System.out.println(arr[input]);
+	
+//	int input = scan.nextInt() - 1;
+//	int count = 0;
+//	int answer = 0;
+//	int arr[][] = new int [input / 6 + 1][2];
+//
+//	for(int i = 0; i < input; i++) {
+//		if(i % 6 == 0) {
+//			for(int j = 0; j < 1; j++) {
+//				if(arr[count][0] == 0) {
+//					arr[count][0] = i; 
+//				}else if(arr[count][1] == 0) {
+//					arr[count][1] = i;
+//					count++;
+//				}
+//			}
+//		}
+//	}
+//	System.out.println(Arrays.deepToString(arr));
+//	for(int i = 0; i < arr.length; i++) {
+//		for(int j = 0 ; j < 2; j++) {
+//			if(arr[i][0] < input && arr[i][1] == 0 
+//					|| arr[i][0] < input && arr[i][1] > input) {
+//				answer = i + 1;
+//			}
+//		}
+//	}
+//	System.out.println(answer);
+	
+	
+	
+	
+	
+//	int len = scan.nextInt();
+//	int num = 4;
+//	int num2 = 4;
+//	
+//	for(int i = 0; i < len; i++) {
+//		num = num * 4 - (num2 + num2 - 1);
+//		num2 = (num2 - 1) * 2;
+//	}
+//	System.out.println(num);
 	
 	
 	
