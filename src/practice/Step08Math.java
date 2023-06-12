@@ -19,7 +19,7 @@ public class Step08Math {
 	String arr[] = new String[i];
 	System.out.println(input);
 	int loc = i;
-	//짝수 내려가고 홀수 올라가고
+	//i가 홀수 내려가고 짝수 올라가고
 	if(i % 2 == 0) {	
 		for(int j = 0; j < loc; j++) {
 			arr[j] = i + "/" + (j + 1);
