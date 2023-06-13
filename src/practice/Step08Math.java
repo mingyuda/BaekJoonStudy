@@ -8,32 +8,90 @@ import java.util.Scanner;
 public class Step08Math {
 	public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
-	int input = scan.nextInt();
-	int i = 0;
-	// 맨윗값 기준으로 i가 분모에 들어갈 값
-	while(input > 0) {
-		i++;
-		input -= i;
-	}
-	input = Math.abs(input);
-	String arr[] = new String[i];
-	System.out.println(input);
-	int loc = i;
-	//i가 짝수 내려가고 홀수 올라가고
-	if(i % 2 == 0) {	
-		for(int j = 0; j < loc; j++) {
-			arr[j] = i + "/" + (j + 1);
-			i--;
-		}
-	}else {
-		for(int j = 0; j < loc; j++) {
-			arr[j] = (j+1) + "/" + i;
-			i--;
-		}
-	}
+//	String A = scan.next();
+//	String B = scan.next();
+//	ArrayList<Integer> arr1 = new ArrayList<Integer>();
+//	ArrayList<Integer> arr2 = new ArrayList<Integer>();
+//		
+//	if(arr1.size() > arr2.size()) {
+//		
+//		for(int i = 0; i < arr1.size(); i++) {
+//			
+//		}
+//		
+//		
+//		
+//	}
 	
-	System.out.println(Arrays.deepToString(arr));
-	System.out.println(arr[input]);
+	
+	
+	int climb = scan.nextInt();
+	int slide = scan.nextInt();
+	int height = scan.nextInt();
+	int dayCount = 0;
+	
+	while(height > 0) {
+		dayCount++;
+		height = height - climb;
+		if(height <= 0 ) {
+			break;
+		}
+		height += slide;
+	}
+	System.out.println(dayCount);
+	
+	
+	
+//	int input = scan.nextInt();
+//	int i = 1;
+//	int count = 0;
+//	int add = 0;
+//	if(input == 1) {
+//		count++;
+//	}
+//	while(input > i) {
+//		i = 6 * add + i;
+//		add++;
+//		count++;
+//	}
+//	
+//	System.out.println(count);
+	
+	
+	
+	
+	
+	
+//	int input = scan.nextInt();
+//	int i = 0;
+//	// 맨윗값 기준으로 i가 분모에 들어갈 값
+//	while(input > 0) {
+//		i++;
+//		input -= i;
+//	}
+//	input = Math.abs(input);
+//	String arr[] = new String[i];
+//	System.out.println(input);
+//	int loc = i;
+//	//i가 짝수 내려가고 홀수 올라가고
+//	if(i % 2 == 0) {	
+//		for(int j = 0; j < loc; j++) {
+//			arr[j] = i + "/" + (j + 1);
+//			i--;
+//		}
+//	}else {
+//		for(int j = 0; j < loc; j++) {
+//			arr[j] = (j+1) + "/" + i;
+//			i--;
+//		}
+//	}
+//	
+//	System.out.println(Arrays.deepToString(arr));
+//	System.out.println(arr[input]);
+	
+	
+	
+	
 	
 //	int input = scan.nextInt() - 1;
 //	int count = 0;
