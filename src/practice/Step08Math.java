@@ -8,37 +8,72 @@ import java.util.Scanner;
 public class Step08Math {
 	public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
+	
+	
+    int climb = scan.nextInt();
+    int slide = scan.nextInt();
+    int height = scan.nextInt();
+
+    int temp1 = height - slide;
+    int temp2 = climb - slide;
+
+    int dayCount = 0;
+
+    dayCount = (temp1) / (temp2);
+
+    if((temp1) % (temp2) != 0) { 
+    	dayCount++;
+    }
+
+    System.out.println(dayCount);
+	
+	
+//	int climb = scan.nextInt();
+//	int slide = scan.nextInt();
+//	int height = scan.nextInt();
+//	int dayCount = (height) / (climb - slide);
+//	
+//	
+//	System.out.println(Math.round(Math.ceil(dayCount)));
+	
+	
+	
+//	while(height > 0) {
+//		dayCount++;
+//		height = height - climb;
+//		if(height <= 0 ) {
+//			break;
+//		}
+//		height += slide;
+//	}
+//	System.out.println(dayCount);
+	
+	
+	
+	
 //	String A = scan.next();
 //	String B = scan.next();
 //	ArrayList<Integer> arr1 = new ArrayList<Integer>();
 //	ArrayList<Integer> arr2 = new ArrayList<Integer>();
-//		
-//	if(arr1.size() > arr2.size()) {
-//		
-//		for(int i = 0; i < arr1.size(); i++) {
-//			
+//	int arr1[] = null;
+//	int arr2[] = null;
+//	
+	
+//	if(A.length() > B.length()) {
+//		arr1 = new int [A.length()]; 
+//		arr2 = new int [A.length()]; 
+//	}
+//		for(int i = 0; i < A.length(); i++) {
+//			arr1[i] = ((int) A.charAt(i) - 48);
+//			arr2[i] = ((int) B.charAt(i) - 48);
+//
 //		}
 //		
-//		
-//		
-//	}
+//		System.out.println(arr1);
+//		System.out.println(arr2);
 	
 	
 	
-	int climb = scan.nextInt();
-	int slide = scan.nextInt();
-	int height = scan.nextInt();
-	int dayCount = 0;
-	
-	while(height > 0) {
-		dayCount++;
-		height = height - climb;
-		if(height <= 0 ) {
-			break;
-		}
-		height += slide;
-	}
-	System.out.println(dayCount);
 	
 	
 	
