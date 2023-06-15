@@ -9,23 +9,82 @@ public class Step08Math {
 	public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
 	
+	String A = scan.next();
+	String B = scan.next();
+
+	int arr1[] = null;
+	int arr2[] = null;
+	int arr3[] = null;
+	String answer = "";
+	if(A.length() >= B.length()) {
+		arr1 = new int [A.length()]; 
+		arr2 = new int [A.length()]; 
+		arr3 = new int [A.length()];
+		
+	}else {
+		arr1 = new int [B.length()]; 
+		arr2 = new int [B.length()]; 
+		arr3 = new int [B.length()];
+		
+	}	
+		int index1 = arr1.length - A.length();
+		for(int i = 0; i < A.length(); i++) {
+			arr1[index1] = ((int) A.charAt(i) - 48);	
+			index1++;
+		}
+		int index2 = arr2.length - B.length();
+		for(int i = 0; i < B.length(); i++) {
+			arr2[index2] = ((int) B.charAt(i) - 48);
+			index2++;
+		}
+
+		
+		System.out.println(Arrays.toString(arr1));
+		System.out.println(Arrays.toString(arr2));
 	
-    int climb = scan.nextInt();
-    int slide = scan.nextInt();
-    int height = scan.nextInt();
-
-    int temp1 = height - slide;
-    int temp2 = climb - slide;
-
-    int dayCount = 0;
-
-    dayCount = (temp1) / (temp2);
-
-    if((temp1) % (temp2) != 0) { 
-    	dayCount++;
-    }
-
-    System.out.println(dayCount);
+	int temp3 = 0;
+	for(int i = arr1.length - 1; i > -1 ; i--) {
+		int temp1 = arr1[i];
+		int temp2 = arr2[i];
+		if(temp1 + temp2 + temp3 >= 10) {
+			arr3[i] = temp1 + temp2 + temp3 - 10;
+			temp3 = 1;
+		}else {
+			arr3[i] = temp1 + temp2 + temp3;
+			temp3 = 0;
+		}
+	}
+	System.out.println(Arrays.toString(arr3));
+	for(int i = arr1.length - 1; i > -1 ; i--) {
+		answer = Integer.toString(arr3[i]) + answer;
+		
+	}
+	if(temp3 != 0) {
+		System.out.println(Integer.toString(temp3) + answer);		
+	}else {
+		System.out.println(answer);	
+	}
+	
+	
+	
+//	
+//	
+//    int climb = scan.nextInt();
+//    int slide = scan.nextInt();
+//    int height = scan.nextInt();
+//
+//    int temp1 = height - slide;
+//    int temp2 = climb - slide;
+//
+//    int dayCount = 0;
+//
+//    dayCount = (temp1) / (temp2);
+//
+//    if((temp1) % (temp2) != 0) { 
+//    	dayCount++;
+//    }
+//
+//    System.out.println(dayCount);
 	
 	
 //	int climb = scan.nextInt();
@@ -51,26 +110,6 @@ public class Step08Math {
 	
 	
 	
-//	String A = scan.next();
-//	String B = scan.next();
-//	ArrayList<Integer> arr1 = new ArrayList<Integer>();
-//	ArrayList<Integer> arr2 = new ArrayList<Integer>();
-//	int arr1[] = null;
-//	int arr2[] = null;
-//	
-	
-//	if(A.length() > B.length()) {
-//		arr1 = new int [A.length()]; 
-//		arr2 = new int [A.length()]; 
-//	}
-//		for(int i = 0; i < A.length(); i++) {
-//			arr1[i] = ((int) A.charAt(i) - 48);
-//			arr2[i] = ((int) B.charAt(i) - 48);
-//
-//		}
-//		
-//		System.out.println(arr1);
-//		System.out.println(arr2);
 	
 	
 	
