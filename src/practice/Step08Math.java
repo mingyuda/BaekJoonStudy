@@ -7,11 +7,13 @@ import java.util.Scanner;
 
 public class Step08Math {
 	public static void main(String[] args) {
+	
+	// 소스트리 확인용
 	Scanner scan = new Scanner(System.in);
 	
 	String A = scan.next();
 	String B = scan.next();
-
+    
 	int arr1[] = null;
 	int arr2[] = null;
 	int arr3[] = null;
