@@ -8,40 +8,58 @@ public class Step09Math {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		int A = 0;
-		while(true) {
+		
+		int len = scan.nextInt();
+		int count = 0;
+		for(int i = 0; i < len; i++) {
 			int sum = 0;
-			A = scan.nextInt();
-			if(A == -1) {
-				break;
-			}
-			for(int i = 1; i < A; i++) {
-				if(A % i == 0) {
-					arr.add(i);
+			int input = scan.nextInt();
+			for(int j = 1; j <= input; j++) {
+				if(input % j == 0) {
+					sum += j;
 				}
 			}
-			
-			for(int i = 0; i < arr.size(); i++) {
-				sum = arr.get(i) + sum;
+			if(sum == input + 1) {
+				count += 1;
 			}
-			
-			if(A == sum) {
-				System.out.print(A + " = " + arr.get(0));
-				for(int i = 1; i < arr.size(); i++) {
-					System.out.print(" + " + arr.get(i));
-				}
-				System.out.println();
-			}else {
-				System.out.println(A + " is NOT perfect.");
-			}
-			
-			int index = arr.size();
-			for(int i = 0; i < index; i++) {
-				arr.remove(0);
-			}		
 			
 		}
+		System.out.println(count);
+		
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		int A = 0;
+//		while(true) {
+//			int sum = 0;
+//			A = scan.nextInt();
+//			if(A == -1) {
+//				break;
+//			}
+//			for(int i = 1; i < A; i++) {
+//				if(A % i == 0) {
+//					arr.add(i);
+//				}
+//			}
+//			
+//			for(int i = 0; i < arr.size(); i++) {
+//				sum = arr.get(i) + sum;
+//			}
+//			
+//			if(A == sum) {
+//				System.out.print(A + " = " + arr.get(0));
+//				for(int i = 1; i < arr.size(); i++) {
+//					System.out.print(" + " + arr.get(i));
+//				}
+//				System.out.println();
+//			}else {
+//				System.out.println(A + " is NOT perfect.");
+//			}
+//			
+//			int index = arr.size();
+//			for(int i = 0; i < index; i++) {
+//				arr.remove(0);
+//			}		
+//			
+//		}
 		
 		
 		
