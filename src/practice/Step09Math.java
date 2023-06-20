@@ -9,22 +9,47 @@ public class Step09Math {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int len = scan.nextInt();
-		int count = 0;
-		for(int i = 0; i < len; i++) {
+		int start = scan.nextInt();
+		int end = scan.nextInt();
+		int totalSum = 0;
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		for(int i = start; i <= end; i++) {
 			int sum = 0;
-			int input = scan.nextInt();
-			for(int j = 1; j <= input; j++) {
-				if(input % j == 0) {
+			for(int j = 1; j <= i; j++) {
+				if(i % j == 0) {
 					sum += j;
 				}
 			}
-			if(sum == input + 1) {
-				count += 1;
+			if(sum == i + 1) {
+				arr.add(i);
+				totalSum += i;
 			}
-			
 		}
-		System.out.println(count);
+		
+		if(totalSum != 0) {
+			System.out.println(totalSum);
+			System.out.println(arr.get(0));	
+		}else {
+			System.out.println(-1);
+		}
+		
+		
+//		int len = scan.nextInt();
+//		int count = 0;
+//		for(int i = 0; i < len; i++) {
+//			int sum = 0;
+//			int input = scan.nextInt();
+//			for(int j = 1; j <= input; j++) {
+//				if(input % j == 0) {
+//					sum += j;
+//				}
+//			}
+//			if(sum == input + 1) {
+//				count += 1;
+//			}
+//			
+//		}
+//		System.out.println(count);
 		
 //		ArrayList<Integer> arr = new ArrayList<Integer>();
 //		int A = 0;
