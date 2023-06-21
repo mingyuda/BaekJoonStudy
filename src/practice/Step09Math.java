@@ -4,34 +4,61 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class Step09Math {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int start = scan.nextInt();
-		int end = scan.nextInt();
-		int totalSum = 0;
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		for(int i = start; i <= end; i++) {
-			int sum = 0;
-			for(int j = 1; j <= i; j++) {
-				if(i % j == 0) {
-					sum += j;
+		int input = scan.nextInt();
+		
+		ArrayList<Integer> arr= new ArrayList<Integer>();
+		
+		while(input > 1) {
+			int index = 2;
+			while(true) {
+				if(input % index == 0) {
+					input = input / index;
+					arr.add(index);
+					break;
 				}
-			}
-			if(sum == i + 1) {
-				arr.add(i);
-				totalSum += i;
+				index++;
 			}
 		}
 		
-		if(totalSum != 0) {
-			System.out.println(totalSum);
-			System.out.println(arr.get(0));	
-		}else {
-			System.out.println(-1);
+//		System.out.println(arr);
+		
+		for(int i = 0; i < arr.size(); i++) {
+			System.out.println(arr.get(i));
 		}
+		
+		
+		
+//		int start = scan.nextInt();
+//		int end = scan.nextInt();
+//		int totalSum = 0;
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		for(int i = start; i <= end; i++) {
+//			int sum = 0;
+//			for(int j = 1; j <= i; j++) {
+//				if(i % j == 0) {
+//					sum += j;
+//				}
+//			}
+//			if(sum == i + 1) {
+//				arr.add(i);
+//				totalSum += i;
+//			}
+//		}
+//		
+//		if(totalSum != 0) {
+//			System.out.println(totalSum);
+//			System.out.println(arr.get(0));	
+//		}else {
+//			System.out.println(-1);
+//		}
+		
+
 		
 		
 //		int len = scan.nextInt();
