@@ -10,27 +10,130 @@ public class Step09Math {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int input = scan.nextInt();
+		ArrayList<Integer> arr = new ArrayList<Integer>();
 		
-		ArrayList<Integer> arr= new ArrayList<Integer>();
+		for(int i = 0; i < 6; i++) {
+
+		}
 		
-		while(input > 1) {
-			int index = 2;
-			while(true) {
-				if(input % index == 0) {
-					input = input / index;
-					arr.add(index);
-					break;
-				}
-				index++;
+		System.out.println(arr);
+		
+		int index = 6;
+		for(int i = 0; i < index; i++) {
+			int input = scan.nextInt();
+			arr.add(input);
+			if(arr.contains(arr.get(i))) {
+				arr.remove(i);
+				index--;
 			}
 		}
 		
-//		System.out.println(arr);
+		System.out.println(arr);
 		
-		for(int i = 0; i < arr.size(); i++) {
-			System.out.println(arr.get(i));
-		}
+		
+		
+		
+		
+		
+//		int [][] arr = new int [3][2];
+//		
+//		System.out.println(Arrays.deepToString(arr));
+//		
+//		for(int i = 0; i < 3; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				int input = scan.nextInt();
+//				arr[i][j] = input;
+//			}
+//		}
+//		
+//		for(int i = 0 ; i < 3; i++) {
+//			if(arr[i][0] == arr[i+1][0]) {
+//				
+//			}
+//		}
+			
+//		System.out.println(Arrays.deepToString(arr));
+		
+//		for(int i = 0 ; i < 5; i++) {
+//			int input = arr[i];
+//			for(int j = 0; j < i; j++) {
+//				
+//			}
+//		}
+		
+		
+		
+		
+		
+		
+		
+//		int x = scan.nextInt();
+//		int y = scan.nextInt();
+//		int h = scan.nextInt();
+//		int w = scan.nextInt();
+//		
+//		int xdiff = h - x;
+//		int ydiff = w - y;
+//		
+//		int input = 0;
+//		
+//		if(xdiff < ydiff) {
+//			input = xdiff;
+//		}else {
+//			input = ydiff;
+//		}
+//		
+//		if(x < input) {
+//			input = x;
+//		}
+//		
+//		if(y < input) {
+//			input = y;
+//		}
+//		
+//		
+//		System.out.println(input);
+
+		
+		
+		
+//		int A = scan.nextInt();
+//		int B = scan.nextInt();
+//		
+//		int answer = A * B;
+//		System.out.println(answer);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		int input = scan.nextInt();
+//		
+//		ArrayList<Integer> arr= new ArrayList<Integer>();
+//		
+//		while(input > 1) {
+//			int index = 2;
+//			while(true) {
+//				if(input % index == 0) {
+//					input = input / index;
+//					arr.add(index);
+//					break;
+//				}
+//				index++;
+//			}
+//		}
+//		
+////		System.out.println(arr);
+//		
+//		for(int i = 0; i < arr.size(); i++) {
+//			System.out.println(arr.get(i));
+//		}
 		
 		
 		
