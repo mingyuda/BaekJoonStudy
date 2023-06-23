@@ -2,71 +2,112 @@ package practice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 
 public class Step09Math {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		
-		for(int i = 0; i < 6; i++) {
 
+		int [][] arr = new int [3][2];
+		
+		System.out.println(Arrays.deepToString(arr));
+		
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 2; j++) {
+				int input = scan.nextInt();
+				arr[i][j] = input;
+			}
 		}
+
 		
-		System.out.println(arr);
-		
-		int index = 6;
-		for(int i = 0; i < index; i++) {
-			int input = scan.nextInt();
-			arr.add(input);
-			if(arr.contains(arr.get(i))) {
-				arr.remove(i);
-				index--;
+		int temp1 = 0;
+		int temp2 = 0;
+		for(int i = 0; i < 2; i++) {
+			temp1 = arr[i][0];
+			temp2 = arr[i][1];
+			for(int j = i + 1; j < 3; j++) {
+				if(temp1 == arr[j][0]) {
+					arr[j][0] = 0;
+					arr[i][0] = 0;
+				}
+				if(temp2 == arr[j][1]) {
+					arr[j][1] = 0;
+					arr[i][1] = 0;
+				}
+				
 			}
 		}
 		
-		System.out.println(arr);
-		
-		
-		
-		
-		
-		
-//		int [][] arr = new int [3][2];
-//		
 //		System.out.println(Arrays.deepToString(arr));
-//		
-//		for(int i = 0; i < 3; i++) {
-//			for(int j = 0; j < 2; j++) {
-//				int input = scan.nextInt();
-//				arr[i][j] = input;
-//			}
+		
+		
+		for(int i = 0; i < 3; i++) {
+			if(arr[i][0] != 0) {
+				System.out.print(arr[i][0] + " ");
+			}
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			if(arr[i][1] != 0) {
+				System.out.print(arr[i][1]);
+			}
+		}
+		
+		
+		
+		
+		
+		
+		//실패
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		for(int i = 0; i < 6; i++) {
+//			int input = scan.nextInt();
+//			arr.add(input);
 //		}
 //		
-//		for(int i = 0 ; i < 3; i++) {
-//			if(arr[i][0] == arr[i+1][0]) {
+//		HashSet<Integer> set = new HashSet<>(arr);
+//		ArrayList<Integer> temp = new ArrayList<Integer>(set);
+//		
+//		System.out.println(temp);
+//		
+//		
+//		for(int i = 0; i < temp.size(); i++) {
+//			for(int j = i + 1; j < arr.size(); j++) {
 //				
 //			}
 //		}
-			
-//		System.out.println(Arrays.deepToString(arr));
 		
-//		for(int i = 0 ; i < 5; i++) {
-//			int input = arr[i];
-//			for(int j = 0; j < i; j++) {
-//				
+		
+		//실패
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		ArrayList<Integer> answer = new ArrayList<Integer>();
+//		for(int i = 0; i < 6; i++) {
+//			int input = scan.nextInt();
+//			arr.add(input);
+//		}
+//		
+//		System.out.println(arr);
+//		int temp = 0;
+//		int index = 6;
+//		for(int i = 0; i < index; i++) {
+//			temp = arr.get(i);
+//			arr.remove(i);
+//			System.out.println(arr);
+//			index--;
+//			if(arr.contains(temp) == false) {
+//				answer.add(temp);
 //			}
 //		}
+//		
+//		System.out.println(answer);		
 		
 		
-		
-		
-		
-		
-		
+		//실패
 //		int x = scan.nextInt();
 //		int y = scan.nextInt();
 //		int h = scan.nextInt();
