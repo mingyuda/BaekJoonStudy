@@ -12,52 +12,58 @@ public class Step09Math {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-
-		int [][] arr = new int [3][2];
+		int count = 0;
+		double input = scan.nextDouble();
+		double sum = input * 4;
 		
-		System.out.println(Arrays.deepToString(arr));
+		System.out.println(Math.round(sum));
 		
-		for(int i = 0; i < 3; i++) {
-			for(int j = 0; j < 2; j++) {
-				int input = scan.nextInt();
-				arr[i][j] = input;
-			}
-		}
-
 		
-		int temp1 = 0;
-		int temp2 = 0;
-		for(int i = 0; i < 2; i++) {
-			temp1 = arr[i][0];
-			temp2 = arr[i][1];
-			for(int j = i + 1; j < 3; j++) {
-				if(temp1 == arr[j][0]) {
-					arr[j][0] = 0;
-					arr[i][0] = 0;
-				}
-				if(temp2 == arr[j][1]) {
-					arr[j][1] = 0;
-					arr[i][1] = 0;
-				}
-				
-			}
-		}
-		
+//		int [][] arr = new int [3][2];
+//		
 //		System.out.println(Arrays.deepToString(arr));
-		
-		
-		for(int i = 0; i < 3; i++) {
-			if(arr[i][0] != 0) {
-				System.out.print(arr[i][0] + " ");
-			}
-		}
-		
-		for(int i = 0; i < 3; i++) {
-			if(arr[i][1] != 0) {
-				System.out.print(arr[i][1]);
-			}
-		}
-		
+//		
+//		for(int i = 0; i < 3; i++) {
+//			for(int j = 0; j < 2; j++) {
+//				int input = scan.nextInt();
+//				arr[i][j] = input;
+//			}
+//		}
+//
+//		
+//		int temp1 = 0;
+//		int temp2 = 0;
+//		for(int i = 0; i < 2; i++) {
+//			temp1 = arr[i][0];
+//			temp2 = arr[i][1];
+//			for(int j = i + 1; j < 3; j++) {
+//				if(temp1 == arr[j][0]) {
+//					arr[j][0] = 0;
+//					arr[i][0] = 0;
+//				}
+//				if(temp2 == arr[j][1]) {
+//					arr[j][1] = 0;
+//					arr[i][1] = 0;
+//				}
+//				
+//			}
+//		}
+//		
+////		System.out.println(Arrays.deepToString(arr));
+//		
+//		
+//		for(int i = 0; i < 3; i++) {
+//			if(arr[i][0] != 0) {
+//				System.out.print(arr[i][0] + " ");
+//			}
+//		}
+//		
+//		for(int i = 0; i < 3; i++) {
+//			if(arr[i][1] != 0) {
+//				System.out.print(arr[i][1]);
+//			}
+//		}
+//		
 		
 		
 		
