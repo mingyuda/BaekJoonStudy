@@ -12,11 +12,65 @@ public class Step09Math {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int count = 0;
-		double input = scan.nextDouble();
-		double sum = input * 4;
 		
-		System.out.println(Math.round(sum));
+		int result = (1==1)? 3 : 4;
+		
+		System.out.println(result);
+		
+		
+		
+		
+		
+		
+		
+		
+//		int len = scan.nextInt();
+//	
+//		int xMin = 10000;
+//		int yMin = 10000;
+//		int xMax = -10000;
+//		int yMax = -10000;
+//		
+//		for(int i = 0 ; i < len; i++) {
+//			int x = scan.nextInt();
+//			int y = scan.nextInt();
+//			
+//			if(x > xMax) {
+//				xMax = x;
+//			}
+//			if(x < xMin){
+//				xMin = x;
+//			}
+//			
+//			if(y > yMax) {
+//				yMax = y;
+//			}
+//			if(y < yMin){
+//				yMin = y;			
+//			}
+//			
+//			if(len < 2) {
+//				xMin = 0;
+//				yMin = 0;
+//				xMax = 0;
+//				yMax = 0;
+//			}
+//			
+//			
+//			
+//		}
+//
+//		System.out.println((xMax - xMin) * (yMax - yMin));
+		
+		
+		
+		
+		
+//		int count = 0;
+//		double input = scan.nextDouble();
+//		double sum = input * 4;
+//		
+//		System.out.println(Math.round(sum));
 		
 		
 //		int [][] arr = new int [3][2];
