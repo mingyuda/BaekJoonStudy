@@ -5,17 +5,59 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 
 public class Step09Math {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+
 		
-		int result = (1==1)? 3 : 4;
+		while(true) {
+			int A = scan.nextInt();
+			int B = scan.nextInt();
+			int C = scan.nextInt();
+			
+			if(A == 0 && A == B && A == C) {
+				break;
+			}
+			
+			if(A < B + C && B < A + C && C < A + B) {
+				if(A == B && A == C) {
+					System.out.println("Equilateral");
+				}else if(A == B|| A == C || B == C) {
+					System.out.println("Isosceles");
+				}else {
+					System.out.println("Scalene");
+				}
+			}else {
+				System.out.println("Invalid");
+			}
+
+
+		}
 		
-		System.out.println(result);
+		
+		
+		
+//		int A = scan.nextInt();
+//		int B = scan.nextInt();
+//		int C = scan.nextInt();
+//		
+//		if(A + B + C  == 180) {
+//			if(A == B && A == C) {
+//				System.out.println("Equilateral");
+//			}else if(A == B|| A == C || B == C) {
+//				System.out.println("Isosceles");
+//			}else {
+//				System.out.println("Scalene");
+//			}
+//			
+//			
+//			
+//		}else {
+//			System.out.println("Error");
+//		}
 		
 		
 		
