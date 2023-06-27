@@ -11,31 +11,71 @@ public class Step09Math {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-
 		
-		while(true) {
-			int A = scan.nextInt();
-			int B = scan.nextInt();
-			int C = scan.nextInt();
-			
-			if(A == 0 && A == B && A == C) {
-				break;
-			}
-			
-			if(A < B + C && B < A + C && C < A + B) {
-				if(A == B && A == C) {
-					System.out.println("Equilateral");
-				}else if(A == B|| A == C || B == C) {
-					System.out.println("Isosceles");
-				}else {
-					System.out.println("Scalene");
-				}
-			}else {
-				System.out.println("Invalid");
-			}
-
-
+		int A = scan.nextInt();
+		int B = scan.nextInt();
+		int C = scan.nextInt();
+		
+		int Max = 0;
+		int rest1 = 0;
+		int rest2 = 0;
+		
+		int sum = 0;
+		
+		if(A > B && A > C) {
+			Max = A;
+			rest1 = B;
+			rest2 = C;
+		}else if(B > A && B > C) {
+			Max = B;
+			rest1 = A;
+			rest2 = C;
+		}else if(C > A && C > A) {
+			Max = C;
+			rest1 = A;
+			rest2 = B;
+		}else {
+			Max = A;
+			rest1 = B;
+			rest2 = C;
 		}
+		
+		
+		if(Max >= rest1 + rest2) {
+			sum = 2 * rest1 + 2 * rest2 - 1;
+		}else {
+			sum = Max + rest1 + rest2;
+		}
+		
+		System.out.println(sum);
+		
+		
+		
+		
+		
+//		while(true) {
+//			int A = scan.nextInt();
+//			int B = scan.nextInt();
+//			int C = scan.nextInt();
+//			
+//			if(A == 0 && A == B && A == C) {
+//				break;
+//			}
+//			
+//			if(A < B + C && B < A + C && C < A + B) {
+//				if(A == B && A == C) {
+//					System.out.println("Equilateral");
+//				}else if(A == B|| A == C || B == C) {
+//					System.out.println("Isosceles");
+//				}else {
+//					System.out.println("Scalene");
+//				}
+//			}else {
+//				System.out.println("Invalid");
+//			}
+//
+//
+//		}
 		
 		
 		
