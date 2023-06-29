@@ -8,9 +8,26 @@ public class Step10TimeComplex {
 		Scanner scan = new Scanner(System.in);
 		
 		int A = scan.nextInt();
+		
+		System.out.println(A);
 		System.out.println(1);
-		System.out.println(0);
-
+		
+		
+		
+		
+		
+		
+//		int A = scan.nextInt();
+//		System.out.println(1);
+//		System.out.println(0);
+//
+//		char B = '2';
+//		B += 1;
+//		System.out.println(B);
+		
+		
+		
 	}
+	
 
 }
