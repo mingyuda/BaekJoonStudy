@@ -1,5 +1,10 @@
 package practice;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class Step10TimeComplex {
@@ -7,10 +12,28 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		double A = scan.nextInt();
-		A = A * A;
-		System.out.println(Math.round(A));
+		double A = scan.nextDouble();
+		
+		double sum = 0;
+		
+		sum = A * (A - 1) / 2;
+		
+		System.out.println(Math.round(sum));
 		System.out.println(2);
+		
+		
+		
+//		for(int i = 0; i < A - 1; i++) {
+//			for(int j = i + 1; j < A; j++) {
+//				sum++;
+//			}
+//		}
+//		
+//		String answer = Double.toString(Math.round(sum));
+//		bw.write(answer.substring(0, answer.length() - 2));
+//		
+//		
+//		bw.flush();
 		
 		
 		
