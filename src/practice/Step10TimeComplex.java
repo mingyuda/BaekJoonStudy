@@ -12,14 +12,20 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		double A = scan.nextDouble();
+		Long A = scan.nextLong();
+		Long sum;
 		
-		double sum = 0;
-		
-		sum = A * (A - 1) / 2;
-		
-		System.out.println(Math.round(sum));
-		System.out.println(2);
+		sum = A * A * A;
+		System.out.println(sum);
+		System.out.println(3);
+//		double A = scan.nextDouble();
+//		
+//		double sum = 0;
+//		
+//		sum = A * (A - 1) / 2;
+//		
+//		System.out.println(Math.round(sum));
+//		System.out.println(2);
 		
 		
 		
