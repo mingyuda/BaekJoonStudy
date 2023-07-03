@@ -7,17 +7,26 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
-public class Step10TimeComplex {
-
+public class Step10TimeComplex {	
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
 		Long A = scan.nextLong();
-		Long sum;
 		
-		sum = A * A * A;
-		System.out.println(sum);
+		A = ((A - 2) * (A - 1) * A) / 6; 
+		
+		
+		System.out.println(A);
 		System.out.println(3);
+		
+		
+//		Long A = scan.nextLong();
+//		Long sum;
+//		
+//		sum = A * A * A;
+//		System.out.println(sum);
+//		System.out.println(3);
 //		double A = scan.nextDouble();
 //		
 //		double sum = 0;
