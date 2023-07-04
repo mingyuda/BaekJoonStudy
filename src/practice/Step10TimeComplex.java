@@ -12,14 +12,31 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		Long A = scan.nextLong();
+		int answer = 0;
 		
-		A = ((A - 2) * (A - 1) * A) / 6; 
+		int A1 = scan.nextInt();
+		int A2 = scan.nextInt();
+		int B = scan.nextInt();
+		int C = scan.nextInt();
+		
+		//기울기도 비교
+		if((A1 * C) + A2 <= (B * C) && B >= A1) {
+			answer= 1;
+		};
+		
+		System.out.println(answer);
 		
 		
-		System.out.println(A);
-		System.out.println(3);
 		
+		
+//		Long A = scan.nextLong();
+//		
+//		A = ((A - 2) * (A - 1) * A) / 6; 
+//		
+//		
+//		System.out.println(A);
+//		System.out.println(3);
+//		
 		
 //		Long A = scan.nextLong();
 //		Long sum;
