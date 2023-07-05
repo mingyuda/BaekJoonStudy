@@ -5,26 +5,62 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Step10TimeComplex {	
+		
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
+		
+		int n = scan.nextInt();
+		int m = scan.nextInt();
+		
+		int [] arr= new int[n]; 
+		
 		int answer = 0;
 		
-		int A1 = scan.nextInt();
-		int A2 = scan.nextInt();
-		int B = scan.nextInt();
-		int C = scan.nextInt();
 		
-		//기울기도 비교
-		if((A1 * C) + A2 <= (B * C) && B >= A1) {
-			answer= 1;
-		};
+		for(int i = 0; i < n; i++) {
+			int input = scan.nextInt();
+			arr[i] = input;	
+		}
 		
+//		System.out.println(Arrays.toString(arr));
+		
+		int compare = 0;
+		for(int i = 0; i < n-2; i++) {
+			for(int j = i + 1; j < n-1;j++) {
+				for(int k = j+1; k < n; k++) {
+					 compare = arr[i] + arr[j] + arr[k];
+					 if(Math.abs(answer - m) > Math.abs(compare - m) && compare <= m) {
+						 answer = compare;
+					 } 
+				}
+			}
+		}	
+			
+
 		System.out.println(answer);
+		
+		
+		
+		
+//		int answer = 0;
+//		
+//		int A1 = scan.nextInt();
+//		int A2 = scan.nextInt();
+//		int B = scan.nextInt();
+//		int C = scan.nextInt();
+//		
+//		//기울기도 비교
+//		if((A1 * C) + A2 <= (B * C) && B >= A1) {
+//			answer= 1;
+//		};
+//		
+//		System.out.println(answer);
 		
 		
 		
