@@ -14,36 +14,67 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
+		int input = scan.nextInt();
 		
-		int n = scan.nextInt();
-		int m = scan.nextInt();
-		
-		int [] arr= new int[n]; 
-		
+		int copy = input;
+		int temp = copy;
 		int answer = 0;
-		
-		
-		for(int i = 0; i < n; i++) {
-			int input = scan.nextInt();
-			arr[i] = input;	
+		while(temp > 0) {
+			int len = Integer.toString(temp).length();
+			int [] arr = new int[len];
+			int index = (len-1);
+			int temp2 = temp;
+			while(temp2 > 0) {
+				arr[index] = temp2 % 10;
+				temp2 /=10;
+				index--;
+			}
+			int sum = 0;
+			for(int i = 0; i < arr.length; i++) {
+				sum += arr[i];
+			}
+			sum += temp;
+			if(sum == copy) {
+				answer = temp;
+			}
+			
+			temp--;
 		}
 		
-//		System.out.println(Arrays.toString(arr));
 		
-		int compare = 0;
-		for(int i = 0; i < n-2; i++) {
-			for(int j = i + 1; j < n-1;j++) {
-				for(int k = j+1; k < n; k++) {
-					 compare = arr[i] + arr[j] + arr[k];
-					 if(Math.abs(answer - m) > Math.abs(compare - m) && compare <= m) {
-						 answer = compare;
-					 } 
-				}
-			}
-		}	
-			
-
 		System.out.println(answer);
+		
+		
+		
+//		int n = scan.nextInt();
+//		int m = scan.nextInt();
+//		
+//		int [] arr= new int[n]; 
+//		
+//		int answer = 0;
+//		
+//		
+//		for(int i = 0; i < n; i++) {
+//			int input = scan.nextInt();
+//			arr[i] = input;	
+//		}
+//		
+////		System.out.println(Arrays.toString(arr));
+//		
+//		int compare = 0;
+//		for(int i = 0; i < n-2; i++) {
+//			for(int j = i + 1; j < n-1;j++) {
+//				for(int k = j+1; k < n; k++) {
+//					 compare = arr[i] + arr[j] + arr[k];
+//					 if(Math.abs(answer - m) > Math.abs(compare - m) && compare <= m) {
+//						 answer = compare;
+//					 } 
+//				}
+//			}
+//		}	
+//			
+//
+//		System.out.println(answer);
 		
 		
 		
