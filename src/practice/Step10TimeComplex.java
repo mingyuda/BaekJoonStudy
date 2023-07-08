@@ -14,34 +14,55 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int a = scan.nextInt();
-		int b = scan.nextInt();
-		int c = scan.nextInt();
-		int d = scan.nextInt();
-		int e = scan.nextInt();
-		int f = scan.nextInt();
-		
-		// 크래머의 공식
-		int D1 = a * e - (d * b);
-		int D2 = c * e - (f * b);
-		int D3 = a * f - (d * c);
-		
-		int x = D2/D1;
-		int y = D3/D1;
-		
-		System.out.print(x + " ");
-		System.out.print(y);
+		int input = scan.nextInt();
+		int index = 0;
+		int count = 0;
+		while(true) {
+			if(Integer.toString(index).contains("666")) {
+				count++;
+				if(count == input) {
+					System.out.println(index);
+					break;
+				}
+			}
+			index++;
+		}
 		
 		
 		
 		
 		
 		
+//		int N = scan.nextInt();
+//		int M = scan.nextInt();
+//		
+//		String arr[] = new String[N];
+//
+//		for(int i = 0; i < N; i++) {
+//			String input = scan.next();
+//			arr[i] = input;
+//		}
+//
+//		
+//		System.out.println(Arrays.deepToString(arr));
 		
-		
-		
-		
-		
+//		int a = scan.nextInt();
+//		int b = scan.nextInt();
+//		int c = scan.nextInt();
+//		int d = scan.nextInt();
+//		int e = scan.nextInt();
+//		int f = scan.nextInt();
+//		
+//		// 크래머의 공식
+//		int D1 = a * e - (d * b);
+//		int D2 = c * e - (f * b);
+//		int D3 = a * f - (d * c);
+//		
+//		int x = D2/D1;
+//		int y = D3/D1;
+//		
+//		System.out.print(x + " ");
+//		System.out.print(y);		
 		
 		
 //		실패
