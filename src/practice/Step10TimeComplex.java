@@ -14,37 +14,140 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int input = scan.nextInt();
-		int index = 0;
-		int count = 0;
-		while(true) {
-			if(Integer.toString(index).contains("666")) {
-				count++;
-				if(count == input) {
-					System.out.println(index);
-					break;
+		int n = scan.nextInt();
+
+
+		int answer = -1;
+		for (int i = 0; i * 5 <= n; i++) {
+			for (int j = 0; i * 5 + j * 3 <= n; j++) {
+				if (i * 5 + j * 3 == n) {
+					answer = i + j;
 				}
 			}
-			index++;
 		}
+
+		System.out.println(answer);
 		
 		
 		
 		
 		
 		
+		
+
+		
+		
+//		if(kg != 0) {
+//		System.out.println(-1);
+//	}else {
+//		System.out.println(count2);			
+//	}
+		
+		
+		
+//		체스판
 //		int N = scan.nextInt();
 //		int M = scan.nextInt();
 //		
-//		String arr[] = new String[N];
+//		String arr[][] = new String[N][1];
 //
 //		for(int i = 0; i < N; i++) {
 //			String input = scan.next();
-//			arr[i] = input;
+//			arr[i][0] = input;
 //		}
 //
 //		
 //		System.out.println(Arrays.deepToString(arr));
+//		
+//		// 흑과 백의 비율이 좋은 배열 찾기
+//		int arrColorRatio[] = new int [N];
+//		
+//		
+//		for(int i = 0; i < N; i++) {
+//			int whiteCount = 0;
+//			int blackCount = 0;
+//			for(int j = 0; j < M; j++) {
+//				if(arr[i][0].charAt(j) == 'W') {
+//					whiteCount++;
+//				}else if(arr[i][0].charAt(j) == 'B'){
+//					blackCount++;
+//				}
+//			}
+//			arrColorRatio[i] = Math.abs(whiteCount - blackCount);
+//		
+//		}
+//		
+//		System.out.println(Arrays.toString(arrColorRatio));
+//		int min = 400;
+//		int minIndex = 0;
+//		for(int i = 0; i < N; i++) {
+//			int sum = 0;
+//			for(int j = i; j < i + 8; j++) {
+//				sum += arrColorRatio[j];
+//			}
+//			if(sum <= min) {
+//				minIndex = i;
+//				min = sum;
+//				System.out.println(min);
+//			}
+//			if(i + 8 >= N) {
+//				break;
+//			}
+//		}
+//		
+//		System.out.println(minIndex);
+//		
+//		String[][] answerArr = new String [8][1];
+//		int index = 0;
+//		for(int i = minIndex; i < minIndex + 8; i++) {
+//			answerArr[index][0] = arr[i][0];
+//			index++;
+//		}
+//		
+//		System.out.println(Arrays.deepToString(answerArr));
+		
+		
+// ----------
+		
+		
+		
+		
+//		보류
+//		for(int i = 0; i < N - 1; i++) {
+//			for(int j = 0; j < M - 1; j++) {
+//				if(arr[i][M] == arr[i][M+1]) {
+//					if(arr[i][M] == "W") {
+//						arr[i][M+1] = "B";
+//					}else {
+//						arr[i][M+1] = "B";
+//					}
+//				}
+//			}
+//		}
+		
+		
+		
+		
+//		int input = scan.nextInt();
+//		int index = 0;
+//		int count = 0;
+//		while(true) {
+//			if(Integer.toString(index).contains("666")) {
+//				count++;
+//				if(count == input) {
+//					System.out.println(index);
+//					break;
+//				}
+//			}
+//			index++;
+//		}
+		
+		
+		
+		
+		
+		
+
 		
 //		int a = scan.nextInt();
 //		int b = scan.nextInt();
