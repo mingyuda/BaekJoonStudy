@@ -14,38 +14,95 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int n = scan.nextInt();
-
-
-		int answer = -1;
-		for (int i = 0; i * 5 <= n; i++) {
-			for (int j = 0; i * 5 + j * 3 <= n; j++) {
-				if (i * 5 + j * 3 == n) {
-					answer = i + j;
-				}
-			}
+		int len = scan.nextInt();
+		
+		int arr[] = new int [len];
+		
+		for(int i = 0; i < len; i++) {
+			int input = scan.nextInt();
+			arr[i] = input;
 		}
-
-		System.out.println(answer);
 		
-		
-		
-		
-		
-		
-		
+		Arrays.sort(arr);
 
 		
-		
-//		if(kg != 0) {
-//		System.out.println(-1);
-//	}else {
-//		System.out.println(count2);			
-//	}
+		for(int i = 0; i < len; i++) {
+			System.out.println(arr[i]);
+		}
 		
 		
 		
-//		체스판
+//		int N = scan.nextInt();
+//		int M = scan.nextInt();
+//		
+//		String arr[][] = new String[N][M];
+//
+//		for(int i = 0; i < N; i++) {
+//			String input = scan.next();
+//			for(int j = 0; j < M; j++) {
+//				String input_j = input.charAt(j) + "";
+//				arr[i][j] = input_j;
+//			}
+//		}
+//		
+//		int index_i = 0;
+//		int index_j = 0;
+//		int totalCount = 0;
+//		int Mincount = 4000;
+//		int count = 0;
+//		String firstChar = "";
+//		while(true) {
+//			for(int i = index_i; i < index_i + 8; i++) {
+//				firstChar = arr[index_i][index_j];
+//				System.out.println(firstChar);
+//				for(int j = index_j; j < index_j + 8; j++) {
+//					if((j + 1) % 2 == 1) {
+//						if(firstChar.equals(arr[i][j])) {
+//							
+//						}else {
+//							arr[i][j] = firstChar;
+//							count++;
+//						}
+//					}
+//					if((j + 1) % 2 == 0) {
+//						if(firstChar.equals(arr[i][j])) {	
+//							count++;
+//						}
+//					}
+//				}			
+//
+//			}
+//			index_j++;
+//			if(count < Mincount) {
+//				Mincount = count;
+//			}
+//			count = 0;
+//			
+//			if(index_i + 8 >= N && index_j + 7 >= M) {
+//				break;
+//			}
+//
+//			// 행을 다 훑었을 때
+//			if(index_j + 7 >= M) {
+//				index_j = 0;
+//				index_i++;				
+//			}
+//			
+//			// 열을 다 훑었을 때
+//			if(index_i + 7 >= N) {
+//				index_i = 0;
+//				break;
+//			}
+//		}
+//		
+//		
+//		System.out.println(Mincount);
+		
+		
+		
+		
+		
+////		체스판
 //		int N = scan.nextInt();
 //		int M = scan.nextInt();
 //		
@@ -105,6 +162,48 @@ public class Step10TimeComplex {
 //		}
 //		
 //		System.out.println(Arrays.deepToString(answerArr));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		int n = scan.nextInt();
+//
+//
+//		int answer = -1;
+//		for (int i = 0; i * 5 <= n; i++) {
+//			for (int j = 0; i * 5 + j * 3 <= n; j++) {
+//				if (i * 5 + j * 3 == n) {
+//					answer = i + j;
+//				}
+//			}
+//		}
+//
+//		System.out.println(answer);
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+//		if(kg != 0) {
+//		System.out.println(-1);
+//	}else {
+//		System.out.println(count2);			
+//	}
+		
+		
+		
+
 		
 		
 // ----------
