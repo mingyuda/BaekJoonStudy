@@ -14,21 +14,36 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int len = scan.nextInt();
-		
-		int arr[] = new int [len];
-		
-		for(int i = 0; i < len; i++) {
+		int [] arr = new int [5];
+		int sum = 0;
+		for(int i = 0; i < 5; i++) {
 			int input = scan.nextInt();
 			arr[i] = input;
+			sum += input;
 		}
 		
 		Arrays.sort(arr);
-
 		
-		for(int i = 0; i < len; i++) {
-			System.out.println(arr[i]);
-		}
+		System.out.println(sum/5);
+		System.out.println(arr[2]);
+		
+		
+		
+//		int len = scan.nextInt();
+//		
+//		int arr[] = new int [len];
+//		
+//		for(int i = 0; i < len; i++) {
+//			int input = scan.nextInt();
+//			arr[i] = input;
+//		}
+//		
+//		Arrays.sort(arr);
+//
+//		
+//		for(int i = 0; i < len; i++) {
+//			System.out.println(arr[i]);
+//		}
 		
 		
 		
