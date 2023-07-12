@@ -5,7 +5,9 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Step10TimeComplex {	
@@ -14,18 +16,37 @@ public class Step10TimeComplex {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int [] arr = new int [5];
-		int sum = 0;
-		for(int i = 0; i < 5; i++) {
+		int len = scan.nextInt();
+		int awardLine = scan.nextInt();
+		
+		
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		
+		for(int i = 0; i < len; i++) {
 			int input = scan.nextInt();
-			arr[i] = input;
-			sum += input;
+			arr.add(input);
 		}
+		Collections.sort(arr);
+		Collections.reverse(arr);
+		System.out.println(arr);
+		System.out.println(arr.get(awardLine - 1));
 		
-		Arrays.sort(arr);
 		
-		System.out.println(sum/5);
-		System.out.println(arr[2]);
+		
+		
+		
+//		int [] arr = new int [5];
+//		int sum = 0;
+//		for(int i = 0; i < 5; i++) {
+//			int input = scan.nextInt();
+//			arr[i] = input;
+//			sum += input;
+//		}
+//		
+//		Arrays.sort(arr);
+//		
+//		System.out.println(sum/5);
+//		System.out.println(arr[2]);
 		
 		
 		
