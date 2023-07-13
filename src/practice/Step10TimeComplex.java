@@ -11,26 +11,102 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Step10TimeComplex {	
-		
 	
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		
-		int len = scan.nextInt();
-		int awardLine = scan.nextInt();
-		
-		
-		ArrayList<Integer> arr = new ArrayList<Integer>();
-		
-		for(int i = 0; i < len; i++) {
-			int input = scan.nextInt();
-			arr.add(input);
+	private static int[] sorted;
+	
+	public static void merge_sort(int [] arr){
+		sorted = new int[arr.length];
+		merge_sort(arr, 0, arr.length-1);
+		sorted = null;
+	}
+	
+	private static void merge_sort(int[]arr,int left, int right){
+		if(left == right) {
+			return;
 		}
-		Collections.sort(arr);
-		Collections.reverse(arr);
-		System.out.println(arr);
-		System.out.println(arr.get(awardLine - 1));
+		int mid=(left + right)/2;
 		
+		merge_sort(arr,left,mid);
+		merge_sort(arr,mid+1,right);
+		
+		merge(arr,left,mid,right);
+	}
+	
+	private static void merge(int[] arr , int left, int mid, int right) {
+		int L = left;
+		int R = mid+1;
+		int i = left;
+		while(L <= mid && R <= right) {
+			if(arr[L]<=arr[R]) {
+				sorted[i]=arr[L];
+				i++;
+				L++;
+			}
+			else {
+				sorted[i]=arr[R];
+				i++;
+				R++;
+			}
+			if(L > mid) {
+				while(R <= right) {
+					sorted[i]=arr[R];
+					i++;
+					R++;
+				}
+			}
+			else if(R>right) {
+				while(L <= mid) {
+					sorted[i]=arr[L];
+					i++;
+					L++;
+			}
+		}	
+		}
+		for(int j=left;j<=right;j++) {
+			arr[j]=sorted[j];
+		}
+	}
+	
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+//		Scanner scan = new Scanner(System.in);
+    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); 
+    	
+        int len = Integer.parseInt(br.readLine());
+    	int[] arr = new int[len];
+    	
+    	for(int i = 0;i < len; i++) {
+    		arr[i] = Integer.parseInt(br.readLine());
+    	}
+    	
+    	merge_sort(arr);
+    	for(int i = 0;i < len; i++) {
+    		bw.write(arr[i]+"\n"); 
+		}
+    	bw.flush(); 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		
+//		for(int i = 0; i < len; i++) {
+//			int input = scan.nextInt();
+//			arr.add(input);
+//		}
+//		Collections.sort(arr);
+//		Collections.reverse(arr);
+//		System.out.println(arr);
+//		System.out.println(arr.get(awardLine - 1));
+//		
 		
 		
 		
