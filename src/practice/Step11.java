@@ -44,10 +44,10 @@ class Point implements Comparable<Point>{
 
     @Override
     public int compareTo(Point o) {
-        if(this.x == o.x) {
-            return this.y - o.y;
+        if(this.y == o.y) {
+            return this.x - o.x;
         }
-        return this.x - o.x;
+        return this.y - o.y;
     }
 
 }
