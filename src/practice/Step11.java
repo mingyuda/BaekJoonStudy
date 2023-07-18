@@ -8,51 +8,94 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class Step11 {
 
-	static int N, x, y;
-	static StringBuilder sb = new StringBuilder();
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        N = Integer.parseInt(br.readLine());
-
-        Point[] points = new Point[N];
-        for (int i = 0; i < N; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            x = Integer.parseInt(st.nextToken());
-            y = Integer.parseInt(st.nextToken());
-            points[i] = new Point(x, y);
-        }
-        Arrays.sort(points);
-        for (Point p : points) {
-            sb.append(p.x).append(" ").append(p.y).append("\n");
-        }
-        System.out.println(sb.toString());
-
-    }
-}
-class Point implements Comparable<Point>{
-    int x;
-    int y;
-
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public int compareTo(Point o) {
-        if(this.y == o.y) {
-            return this.x - o.x;
-        }
-        return this.y - o.y;
-    }
-
-}
+		
+		int len = Integer.parseInt(br.readLine());
+		
+		String arr[] = new String [len];
+		
+		for(int i = 0; i < len; i++) {
+			arr[i] = (br.readLine());
+			
+		}
+		
+		Arrays.sort(arr, new Comparator<String>() {
+			
+			@Override
+			public int compare(String o1, String o2) {
+				if(o1.length() == o2.length()) {
+					return o1.compareTo(o2);
+				}
+				else {
+					return o1.length() - o2.length();
+				}
+			}
+			
+		});
 		
 		
+//		System.out.println(Arrays.deepToString(arr));
+		
+		for(int j = 1; j < len; j++) {
+            if(!arr[j-1].equals(arr[j])) {
+                System.out.println(arr[j-1]);
+            }
+        }
+		if(len != 1) {
+			if(arr[len-2] != arr[len-1]){ 
+				System.out.println(arr[len-1]); 
+			}	
+		}else {
+			System.out.println(arr[0]);
+		}
+		
+	}
+}
+//	static int N, x, y;
+//	static StringBuilder sb = new StringBuilder();
+//        N = Integer.parseInt(br.readLine());
+//
+//        Point[] points = new Point[N];
+//        for (int i = 0; i < N; i++) {
+//            StringTokenizer st = new StringTokenizer(br.readLine());
+//            x = Integer.parseInt(st.nextToken());
+//            y = Integer.parseInt(st.nextToken());
+//            points[i] = new Point(x, y);
+//        }
+//        Arrays.sort(points);
+//        for (Point p : points) {
+//            sb.append(p.x).append(" ").append(p.y).append("\n");
+//        }
+//        System.out.println(sb.toString());
+//
+//    }
+//}
+//class Point implements Comparable<Point>{
+//    int x;
+//    int y;
+//
+//    public Point(int x, int y) {
+//        this.x = x;
+//        this.y = y;
+//    }
+//
+//    @Override
+//    public int compareTo(Point o) {
+//        if(this.y == o.y) {
+//            return this.x - o.x;
+//        }
+//        return this.y - o.y;
+//    }
+//
+//}
+//		
+//		
 		
 		
 		
