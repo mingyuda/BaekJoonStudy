@@ -4,6 +4,43 @@ import java.util.Scanner;
 
 public class Step14 {
 	
+	
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int input = scan.nextInt();
+		int input2 = scan.nextInt();
+		
+		int temp = input2;
+		double result = 1;
+		
+		
+		for(int i = 0; i < input2; i++) {
+			result = input * result;
+			result = result / temp;
+			input--;
+			temp--;
+		}
+		
+		System.out.println(Math.round(result));
+		
+		
+		
+		
+		
+//		int input = scan.nextInt();
+//		
+//		System.out.println(square(input));
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 	static int result = 1;
 	static int square(int a) {
 		
@@ -13,15 +50,5 @@ public class Step14 {
 		
 		
 		return result;
-	}
-	
-	
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		int input = scan.nextInt();
-		
-		System.out.println(square(input));
-		
-		
 	}
 }
