@@ -9,21 +9,49 @@ public class Step14 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		int input = scan.nextInt();
-		int input2 = scan.nextInt();
+		int len = scan.nextInt();
 		
-		int temp = input2;
-		double result = 1;
-		
-		
-		for(int i = 0; i < input2; i++) {
-			result = input * result;
-			result = result / temp;
-			input--;
-			temp--;
+		for(int i = 0; i < len; i++) {
+			int N = scan.nextInt();
+			int M = scan.nextInt();
+			double result = 1;
+			
+			int temp = N;
+			
+			for(int j = 0; j < N; j++) {
+				result = M * result;
+				result = result / temp;
+				M--;
+				temp--;
+			}
+			System.out.println(Math.round(result));
+			
 		}
 		
-		System.out.println(Math.round(result));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		int input2 = scan.nextInt();
+//		
+//		int temp = input2;
+//		double result = 1;
+//		
+//		
+//		for(int i = 0; i < input2; i++) {
+//			result = input * result;
+//			result = result / temp;
+//			input--;
+//			temp--;
+//		}
+//		
+//		System.out.println(Math.round(result));
 		
 		
 		
