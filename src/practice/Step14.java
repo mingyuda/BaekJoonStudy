@@ -1,5 +1,6 @@
 package practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Step14 {
@@ -10,23 +11,56 @@ public class Step14 {
 		Scanner scan = new Scanner(System.in);
 		
 		int len = scan.nextInt();
+		int arr[] = new int[len];
 		
-		for(int i = 0; i < len; i++) {
-			int N = scan.nextInt();
-			int M = scan.nextInt();
-			double result = 1;
+		if(len == 1) {
+			int input = scan.nextInt();
+			System.out.println(input * input);
+		}else{
 			
-			int temp = N;
-			
-			for(int j = 0; j < N; j++) {
-				result = M * result;
-				result = result / temp;
-				M--;
-				temp--;
+			for(int i = 0; i < len; i++) {
+				int input = scan.nextInt();	
+				arr[i] = input;
+				
 			}
-			System.out.println(Math.round(result));
 			
+			int Max = 0;
+			int Min = 1000000;
+			
+			for(int i = 0; i < len; i++) {
+				if(arr[i] > Max) {
+					Max = arr[i];
+				}
+				// 어떤 수가 Max 이면서 Min일 수 있어서 else 하면 안됨
+				if(arr[i] < Min) {
+					Min = arr[i];
+				}
+				
+			}
+			
+			System.out.println(Max * Min);
 		}
+		
+		
+		
+//		int len = scan.nextInt();
+//		
+//		for(int i = 0; i < len; i++) {
+//			int N = scan.nextInt();
+//			int M = scan.nextInt();
+//			double result = 1;
+//			
+//			int temp = N;
+//			
+//			for(int j = 0; j < N; j++) {
+//				result = M * result;
+//				result = result / temp;
+//				M--;
+//				temp--;
+//			}
+//			System.out.println(Math.round(result));
+//			
+//		}
 		
 		
 		
