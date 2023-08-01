@@ -13,38 +13,73 @@ public class Step16 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		HashMap<String, String> map = new HashMap<>();
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		ArrayList<String> arr = new ArrayList<String>();
-		int N = Integer.parseInt(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
 		
+//		arr.add("");
 		
-		for(int i = 0; i < N; i++) {
-			StringTokenizer st = new StringTokenizer(br.readLine());
-			String name = st.nextToken(); 
-			String status = st.nextToken();
-			if(status.equals("enter")) {
-			}
-			map.put(name, status);
-			
+		for(int i = 1; i <= N; i++) {
+			String input = br.readLine();
+			arr.add(input);
+			map.put(input, i);	
 		}
-		
-
-		
-		for(String answer : map.keySet()) {
-			if(map.get(answer).equals("enter")) {
-				arr.add(answer);				
-			}
-		}
-		
-		Collections.sort(arr);
-		Collections.reverse(arr);
 		
 		StringBuilder sb = new StringBuilder();
-		for(int i = 0; i < arr.size(); i++) {
-			sb.append(arr.get(i) + "\n");
+		for(int i = 0; i < M; i++) {
+			String input = br.readLine();
+			if(map.get(input) == null) {
+				sb.append(arr.get(Integer.parseInt(input) -1) + "\n");
+			}else {
+				sb.append(map.get(input) + "\n");
+			}
 		}
 		
 		System.out.println(sb);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//7785 성공		
+//		ArrayList<String> arr = new ArrayList<String>();
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		
+//		for(int i = 0; i < N; i++) {
+//			StringTokenizer st = new StringTokenizer(br.readLine());
+//			String name = st.nextToken(); 
+//			String status = st.nextToken();
+//			if(status.equals("enter")) {
+//			}
+//			map.put(name, status);
+//			
+//		}
+//		
+//
+//		
+//		for(String answer : map.keySet()) {
+//			if(map.get(answer).equals("enter")) {
+//				arr.add(answer);				
+//			}
+//		}
+//		
+//		Collections.sort(arr);
+//		Collections.reverse(arr);
+//		
+//		StringBuilder sb = new StringBuilder();
+//		for(int i = 0; i < arr.size(); i++) {
+//			sb.append(arr.get(i) + "\n");
+//		}
+//		
+//		System.out.println(sb);
 		
 	
 		
