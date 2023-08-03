@@ -13,28 +13,67 @@ public class Step16 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		HashMap<Integer, Integer> map2 = new HashMap<Integer, Integer>();
-
 		
-		int N = Integer.parseInt(br.readLine());
+		ArrayList<String> arr = new ArrayList<String>();
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		
-		StringTokenizer st1 = new StringTokenizer(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		
 		for(int i = 0; i < N; i++) {
-			int input1 = Integer.parseInt(st1.nextToken());
-			map.put(input1, map.getOrDefault(input1, 0) + 1);		
+			String input = br.readLine();
+			map.put(input, 1);
 		}
 		
-		int M = Integer.parseInt(br.readLine());
-		StringTokenizer st2 = new StringTokenizer(br.readLine());
-		StringBuilder sb = new StringBuilder();
+		
 		for(int i = 0; i < M; i++) {
-			int input2 = Integer.parseInt(st2.nextToken());
-//			map.getOrDefault(input2, 0);
-			sb.append(map.getOrDefault(input2, 0) + " ");
+			String input = br.readLine();
+			int temp = map.getOrDefault(input, 0) + 1;
+			map.put(input, temp);
+			if(temp != 1) {
+				arr.add(input);
+			}
+			
+		}
+		Collections.sort(arr);
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(arr.size() + "\n");
+		for(int i = 0; i < arr.size(); i++) {
+			sb.append(arr.get(i) + "\n");
 		}
 		
 		System.out.println(sb);
+		
+		
+		
+		
+		
+		
+//	10816번 성공
+//		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+//		HashMap<Integer, Integer> map2 = new HashMap<Integer, Integer>();
+//
+//		
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		StringTokenizer st1 = new StringTokenizer(br.readLine());
+//		for(int i = 0; i < N; i++) {
+//			int input1 = Integer.parseInt(st1.nextToken());
+//			map.put(input1, map.getOrDefault(input1, 0) + 1);		
+//		}
+//		
+//		int M = Integer.parseInt(br.readLine());
+//		StringTokenizer st2 = new StringTokenizer(br.readLine());
+//		StringBuilder sb = new StringBuilder();
+//		for(int i = 0; i < M; i++) {
+//			int input2 = Integer.parseInt(st2.nextToken());
+////			map.getOrDefault(input2, 0);
+//			sb.append(map.getOrDefault(input2, 0) + " ");
+//		}
+//		
+//		System.out.println(sb);
 		
 		
 		
