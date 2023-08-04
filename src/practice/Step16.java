@@ -13,39 +13,92 @@ public class Step16 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+// 1268번 성공
+//		ArrayList<Integer> arr = new ArrayList<Integer>(); 
+//		
+//		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+//		HashMap<Integer, Integer> map2 = new HashMap<Integer, Integer>();
+//		StringTokenizer st = new StringTokenizer(br.readLine());
+//		
+//		int N = Integer.parseInt(st.nextToken());
+//		int M = Integer.parseInt(st.nextToken());
+//		
+//		int count = 0;
+//		
+//		StringTokenizer st1 = new StringTokenizer(br.readLine());
+//		for(int i = 0; i < N; i++) {
+//			int input = Integer.parseInt(st1.nextToken());
+//			map.put(input, 1);
+//			arr.add(input);
+//		}
+//		
+//		
+//		StringTokenizer st2 = new StringTokenizer(br.readLine());
+//		for(int i = 0; i < M; i++) {
+//			int input = Integer.parseInt(st2.nextToken());
+//			int temp = map.getOrDefault(input, 0) + 1;
+//			map2.put(input, 1);
+//
+//			// B-A 갯수
+//			if(temp <= 1) {
+//				count++;
+//			}
+//		}
+//		
+//		for(int i = 0; i < N; i++) {
+//			int input = arr.get(i);
+//			
+//			int temp = map2.getOrDefault(input, 0) + 1;
+//			
+//			if(temp <=1) {
+//				count++;
+//			}
+//			
+//		}
+//		
+//		System.out.println(count);
+
 		
-		ArrayList<String> arr = new ArrayList<String>();
-		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
-		
-		for(int i = 0; i < N; i++) {
-			String input = br.readLine();
-			map.put(input, 1);
-		}
 		
 		
-		for(int i = 0; i < M; i++) {
-			String input = br.readLine();
-			int temp = map.getOrDefault(input, 0) + 1;
-			map.put(input, temp);
-			if(temp != 1) {
-				arr.add(input);
-			}
-			
-		}
-		Collections.sort(arr);
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append(arr.size() + "\n");
-		for(int i = 0; i < arr.size(); i++) {
-			sb.append(arr.get(i) + "\n");
-		}
 		
-		System.out.println(sb);
 		
+		
+// 1764번
+//		ArrayList<String> arr = new ArrayList<String>();
+//		HashMap<String, Integer> map = new HashMap<String, Integer>();
+//		
+//		StringTokenizer st = new StringTokenizer(br.readLine());
+//		int N = Integer.parseInt(st.nextToken());
+//		int M = Integer.parseInt(st.nextToken());
+//		
+//		for(int i = 0; i < N; i++) {
+//			String input = br.readLine();
+//			map.put(input, 1);
+//		}
+//		
+//		
+//		for(int i = 0; i < M; i++) {
+//			String input = br.readLine();
+//			int temp = map.getOrDefault(input, 0) + 1;
+//			map.put(input, temp);
+//			if(temp != 1) {
+//				arr.add(input);
+//			}
+//			
+//		}
+//		Collections.sort(arr);
+//		
+//		StringBuilder sb = new StringBuilder();
+//		sb.append(arr.size() + "\n");
+//		for(int i = 0; i < arr.size(); i++) {
+//			sb.append(arr.get(i) + "\n");
+//		}
+//		
+//		System.out.println(sb);
+//		
 		
 		
 		
