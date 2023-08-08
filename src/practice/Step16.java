@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Step16 {
@@ -14,6 +15,94 @@ public class Step16 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		Stack<Integer> stack = new Stack<Integer>();
+		
+		int N = Integer.parseInt(br.readLine());
+		
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < N; i++) {
+			String input = br.readLine();
+			int left = 0;
+			int right = 0;
+			int pass = 0;
+			
+			if(input.length() % 2 == 1) {
+				right++;
+			}else{
+			
+				for(int j = 0; j < input.length(); j++) {
+					if(input.substring(j, j + 1).equals("(")) {
+						left++;
+					}else {
+						right++;
+					}
+					if(input.substring(j, j + 1).equals(")") && left == right - 1) {
+						sb.append("NO" + "\n");
+						pass = 1;
+						break;
+					}
+					
+				}
+			
+			}
+			
+//			sb.append("-------------------" + "\n");
+//			sb.append(left + "\n");
+//			sb.append(right + "\n");
+			
+			if(pass == 1) {	
+//				sb.append("pass" + "\n");
+				continue;
+			}else if(left == right) {
+				sb.append("YES" + "\n");
+			}else {
+				sb.append("NO" + "\n");				
+			}
+			
+			
+			
+		}
+		
+		
+		System.out.println(sb);
+		
+		
+		
+		
+		
+		
+		
+		
+// 10773 성공
+//		Stack<Integer> stack = new Stack<Integer>();
+//		
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		for(int i = 0; i < N; i++) {
+//			int input = Integer.parseInt(br.readLine());
+//			if(input != 0) {
+//				stack.add(input);
+//			}else {
+//				stack.pop();
+//			}
+//		}
+//		
+//		Long sum = 0L;
+//		
+//		int temp = stack.size();
+//		
+//		for(int i = 0; i < temp; i++) {
+//			sum += stack.pop();
+//		}
+//
+//		System.out.println(sum);
+				
+				
+		
+		
+		
+		
+		
 // 1268번 성공
 //		ArrayList<Integer> arr = new ArrayList<Integer>(); 
 //		
