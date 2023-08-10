@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.StringTokenizer;
@@ -15,56 +17,116 @@ public class Step16 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		Queue<Integer> que = new LinkedList<Integer>();
 		Stack<Integer> stack = new Stack<Integer>();
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		
 		
 		int N = Integer.parseInt(br.readLine());
 		
-		StringBuilder sb = new StringBuilder();
+		
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		for(int i = 0; i < N; i++) {
-			String input = br.readLine();
-			int left = 0;
-			int right = 0;
-			int pass = 0;
-			
-			if(input.length() % 2 == 1) {
-				right++;
+			int input = Integer.parseInt(st.nextToken());
+			que.add(input);
+		}
+
+		int num = 1;
+		int index = 0;
+		int pass = 0;
+		
+		while(true) {
+			if(que.isEmpty() && stack.empty()) {
+				break;
+			}else if(que.isEmpty()) {
+				arr.add(stack.pop());
+				index++;
+			}else if(que.peek() == (num + index)) {
+				arr.add(que.poll());
+				index++;
+			}else if(!stack.empty()) {
+				if(stack.peek() == num + index) {
+					arr.add(stack.pop());
+					index++;
+				}else{
+					stack.add(que.poll());
+				}		
 			}else{
-			
-				for(int j = 0; j < input.length(); j++) {
-					if(input.substring(j, j + 1).equals("(")) {
-						left++;
-					}else {
-						right++;
-					}
-					if(input.substring(j, j + 1).equals(")") && left == right - 1) {
-						sb.append("NO" + "\n");
-						pass = 1;
-						break;
-					}
-					
-				}
-			
+				stack.add(que.poll());
 			}
-			
-//			sb.append("-------------------" + "\n");
-//			sb.append(left + "\n");
-//			sb.append(right + "\n");
-			
-			if(pass == 1) {	
-//				sb.append("pass" + "\n");
-				continue;
-			}else if(left == right) {
-				sb.append("YES" + "\n");
-			}else {
-				sb.append("NO" + "\n");				
-			}
-			
-			
 			
 		}
 		
+		for(int i = 1; i <= N; i++) {
+			if(i == arr.get(i - 1)) {
+				
+			}else {
+				pass = 1;
+			}
+		}
 		
-		System.out.println(sb);
+//		System.out.println(arr);
+		
+		if(pass == 0) {
+			System.out.println("Nice");
+		}else {
+			System.out.println("Sad");
+		}
+		
+		
+		
+		
+		
+		
+		
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		StringBuilder sb = new StringBuilder();
+//		for(int i = 0; i < N; i++) {
+//			String input = br.readLine();
+//			int left = 0;
+//			int right = 0;
+//			int pass = 0;
+//			
+//			if(input.length() % 2 == 1) {
+//				right++;
+//			}else{
+//			
+//				for(int j = 0; j < input.length(); j++) {
+//					if(input.substring(j, j + 1).equals("(")) {
+//						left++;
+//					}else {
+//						right++;
+//					}
+//					if(input.substring(j, j + 1).equals(")") && left == right - 1) {
+//						sb.append("NO" + "\n");
+//						pass = 1;
+//						break;
+//					}
+//					
+//				}
+//			
+//			}
+//			
+////			sb.append("-------------------" + "\n");
+////			sb.append(left + "\n");
+////			sb.append(right + "\n");
+//			
+//			if(pass == 1) {	
+////				sb.append("pass" + "\n");
+//				continue;
+//			}else if(left == right) {
+//				sb.append("YES" + "\n");
+//			}else {
+//				sb.append("NO" + "\n");				
+//			}
+//			
+//			
+//			
+//		}
+		
+		
+//		System.out.println(sb);
 		
 		
 		
