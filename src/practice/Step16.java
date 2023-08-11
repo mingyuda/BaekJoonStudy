@@ -3,8 +3,10 @@ package practice;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,64 +17,116 @@ import java.util.StringTokenizer;
 public class Step16 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-		Queue<Integer> que = new LinkedList<Integer>();
-		Stack<Integer> stack = new Stack<Integer>();
-		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Scanner scan = new Scanner(System.in);
+		Deque<Integer> deque = new ArrayDeque<Integer>();
 		
 		
-		int N = Integer.parseInt(br.readLine());
+		int N = scan.nextInt();
 		
-		
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i < N; i++) {
-			int input = Integer.parseInt(st.nextToken());
-			que.add(input);
-		}
-
-		int num = 1;
-		int index = 0;
-		int pass = 0;
-		
-		while(true) {
-			if(que.isEmpty() && stack.empty()) {
-				break;
-			}else if(que.isEmpty()) {
-				arr.add(stack.pop());
-				index++;
-			}else if(que.peek() == (num + index)) {
-				arr.add(que.poll());
-				index++;
-			}else if(!stack.empty()) {
-				if(stack.peek() == num + index) {
-					arr.add(stack.pop());
-					index++;
-				}else{
-					stack.add(que.poll());
-				}		
-			}else{
-				stack.add(que.poll());
-			}
-			
-		}
-		
-		for(int i = 1; i <= N; i++) {
-			if(i == arr.get(i - 1)) {
-				
-			}else {
-				pass = 1;
+			String input = scan.next();
+			if(input.equals("push")) {
+				int inputNum = scan.nextInt();
+				deque.add(inputNum);
+			}else if(input.equals("front")) {
+				if(deque.size() > 0) {
+					sb.append(deque.peekFirst() + "\n");					
+				}else {
+					sb.append(-1 + "\n");
+				}				
+			}else if(input.equals("back")) {
+				if(deque.size() > 0) {
+					sb.append(deque.peekLast() + "\n");					
+				}else {
+					sb.append(-1 + "\n");
+				}	
+			}else if(input.equals("size")) {
+				sb.append(deque.size() + "\n");
+			}else if(input.equals("pop")) {
+				if(deque.size() > 0) {
+					sb.append(deque.poll() + "\n");					
+				}else {
+					sb.append(-1 + "\n");
+				}
+			}else if(input.equals("empty")) {
+				if(deque.size() == 0) {
+					sb.append(1 + "\n");
+				}else {
+					sb.append(0 + "\n");
+				}
 			}
 		}
 		
-//		System.out.println(arr);
 		
-		if(pass == 0) {
-			System.out.println("Nice");
-		}else {
-			System.out.println("Sad");
-		}
+		System.out.println(sb);
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		Stack<Integer> stack = new Stack<Integer>();
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+		
+		
+		
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		
+//		StringTokenizer st = new StringTokenizer(br.readLine());
+//		for(int i = 0; i < N; i++) {
+//			int input = Integer.parseInt(st.nextToken());
+//			que.add(input);
+//		}
+//
+//		int num = 1;
+//		int index = 0;
+//		int pass = 0;
+//		
+//		while(true) {
+//			if(que.isEmpty() && stack.empty()) {
+//				break;
+//			}else if(que.isEmpty()) {
+//				arr.add(stack.pop());
+//				index++;
+//			}else if(que.peek() == (num + index)) {
+//				arr.add(que.poll());
+//				index++;
+//			}else if(!stack.empty()) {
+//				if(stack.peek() == num + index) {
+//					arr.add(stack.pop());
+//					index++;
+//				}else{
+//					stack.add(que.poll());
+//				}		
+//			}else{
+//				stack.add(que.poll());
+//			}
+//			
+//		}
+//		
+//		for(int i = 1; i <= N; i++) {
+//			if(i == arr.get(i - 1)) {
+//				
+//			}else {
+//				pass = 1;
+//			}
+//		}
+//		
+////		System.out.println(arr);
+//		
+//		if(pass == 0) {
+//			System.out.println("Nice");
+//		}else {
+//			System.out.println("Sad");
+//		}
+//		
 		
 		
 		
