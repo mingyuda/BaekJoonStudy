@@ -17,51 +17,89 @@ import java.util.StringTokenizer;
 public class Step16 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		Scanner scan = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		Deque<Integer> deque = new ArrayDeque<Integer>();
 		
+		int N = Integer.parseInt(br.readLine());
 		
-		int N = scan.nextInt();
+		for(int i = 1; i <= N; i++) {
+			deque.add(i);
+		}
 		
-		StringBuilder sb = new StringBuilder();
-		for(int i = 0; i < N; i++) {
-			String input = scan.next();
-			if(input.equals("push")) {
-				int inputNum = scan.nextInt();
-				deque.add(inputNum);
-			}else if(input.equals("front")) {
-				if(deque.size() > 0) {
-					sb.append(deque.peekFirst() + "\n");					
-				}else {
-					sb.append(-1 + "\n");
-				}				
-			}else if(input.equals("back")) {
-				if(deque.size() > 0) {
-					sb.append(deque.peekLast() + "\n");					
-				}else {
-					sb.append(-1 + "\n");
-				}	
-			}else if(input.equals("size")) {
-				sb.append(deque.size() + "\n");
-			}else if(input.equals("pop")) {
-				if(deque.size() > 0) {
-					sb.append(deque.poll() + "\n");					
-				}else {
-					sb.append(-1 + "\n");
-				}
-			}else if(input.equals("empty")) {
-				if(deque.size() == 0) {
-					sb.append(1 + "\n");
-				}else {
-					sb.append(0 + "\n");
-				}
+		int index = 0;
+		while(deque.size() > 1) {
+			if(index % 2 == 0) {
+				deque.pollFirst();
+			}else if(index % 2 == 1) {
+				deque.addLast(deque.getFirst());
+//				System.out.println(deque);
+				deque.pollFirst();
+//				System.out.println(deque);
 			}
+			index++;
 		}
 		
 		
-		System.out.println(sb);
+		System.out.println(deque.getFirst());
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+// 		18258
+//		Scanner scan = new Scanner(System.in);
+//		Deque<Integer> deque = new ArrayDeque<Integer>();
+//		
+//		
+//		int N = scan.nextInt();
+//		
+//		StringBuilder sb = new StringBuilder();
+//		for(int i = 0; i < N; i++) {
+//			String input = scan.next();
+//			if(input.equals("push")) {
+//				int inputNum = scan.nextInt();
+//				deque.add(inputNum);
+//			}else if(input.equals("front")) {
+//				if(deque.size() > 0) {
+//					sb.append(deque.peekFirst() + "\n");					
+//				}else {
+//					sb.append(-1 + "\n");
+//				}				
+//			}else if(input.equals("back")) {
+//				if(deque.size() > 0) {
+//					sb.append(deque.peekLast() + "\n");					
+//				}else {
+//					sb.append(-1 + "\n");
+//				}	
+//			}else if(input.equals("size")) {
+//				sb.append(deque.size() + "\n");
+//			}else if(input.equals("pop")) {
+//				if(deque.size() > 0) {
+//					sb.append(deque.poll() + "\n");					
+//				}else {
+//					sb.append(-1 + "\n");
+//				}
+//			}else if(input.equals("empty")) {
+//				if(deque.size() == 0) {
+//					sb.append(1 + "\n");
+//				}else {
+//					sb.append(0 + "\n");
+//				}
+//			}
+//		}
+//		
+//		
+//		System.out.println(sb);
+//		
 		
 		
 		
