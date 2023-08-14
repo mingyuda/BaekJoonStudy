@@ -17,31 +17,133 @@ import java.util.StringTokenizer;
 public class Step16 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		Scanner scan = new Scanner(System.in);
 		
 		Deque<Integer> deque = new ArrayDeque<Integer>();
 		
-		int N = Integer.parseInt(br.readLine());
+//		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		for(int i = 1; i <= N; i++) {
-			deque.add(i);
-		}
+		int N = scan.nextInt();
 		
-		int index = 0;
-		while(deque.size() > 1) {
-			if(index % 2 == 0) {
-				deque.pollFirst();
-			}else if(index % 2 == 1) {
-				deque.addLast(deque.getFirst());
-//				System.out.println(deque);
-				deque.pollFirst();
-//				System.out.println(deque);
+		
+		StringBuilder sb = new StringBuilder();
+		for(int i = 0; i < N; i++) {
+			int input = scan.nextInt();
+		
+			if(input == 1) {
+				int temp = scan.nextInt();
+				deque.addFirst(temp);
+			}else if(input == 2) {
+				int temp = scan.nextInt();
+				deque.addLast(temp);
+			}else if(input == 3) {
+				if(deque.size() > 0) {
+					sb.append(deque.pollFirst() + "\n");
+				}else {
+					sb.append(-1 + "\n");
+				}
+			}else if(input == 4) {
+				if(deque.size() > 0) {
+					sb.append(deque.pollLast() + "\n");
+				}else {
+					sb.append(-1 + "\n");
+				}
+			}else if(input == 5) {
+				sb.append(deque.size() + "\n");
+			}else if(input == 6) {
+				if(deque.size() > 0) {
+					sb.append(0 + "\n");
+				}else {
+					sb.append(1 + "\n");
+				}
+			}else if(input == 7) {
+				if(deque.size() > 0) {
+					sb.append(deque.peekFirst() + "\n");
+//					System.out.println("확인" + deque.peekFirst());
+				}else {
+					sb.append(-1 + "\n");
+				}
+			}else if(input == 8) {
+				if(deque.size() > 0) {
+					sb.append(deque.peekLast() + "\n");
+				}else {
+					sb.append(-1 + "\n");
+				}
 			}
-			index++;
+		
 		}
 		
+		System.out.println(sb);
 		
-		System.out.println(deque.getFirst());
+	
+		
+		
+		
+		
+		
+		
+		
+//		int N = Integer.parseInt(st.nextToken());
+//		int M = Integer.parseInt(st.nextToken());
+//		
+//		ArrayList<Integer> arr = new ArrayList<Integer>();
+//		ArrayList<Integer> ans = new ArrayList<Integer>();
+//		Deque<Integer> deque = new ArrayDeque<Integer>();
+//		
+//		
+//		for(int i = 1; i <= N; i++) {
+//			arr.add(i);
+//		}
+//		
+//		System.out.println(arr);
+//		
+//		int index = 1;
+//		int count = M / N;
+//		int temp = 0;
+//		while(ans.size() < N) {
+//			for(int i = 1; i <= count; i++) {
+//				index = (M - 1) * i;
+//				ans.add(arr.get(index));
+//			}
+//		}
+//		
+//		
+//		System.out.println(ans);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+// 2164
+//		Deque<Integer> deque = new ArrayDeque<Integer>();
+//		
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		for(int i = 1; i <= N; i++) {
+//			deque.add(i);
+//		}
+//		
+//		int index = 0;
+//		while(deque.size() > 1) {
+//			if(index % 2 == 0) {
+//				deque.pollFirst();
+//			}else if(index % 2 == 1) {
+//				deque.addLast(deque.getFirst());
+////				System.out.println(deque);
+//				deque.pollFirst();
+////				System.out.println(deque);
+//			}
+//			index++;
+//		}
+//		
+//		
+//		System.out.println(deque.getFirst());
 		
 		
 		
