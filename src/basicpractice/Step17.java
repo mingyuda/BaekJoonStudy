@@ -3,6 +3,9 @@ package basicpractice;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class Step17 {
 	
@@ -78,16 +81,48 @@ public class Step17 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		int N = Integer.parseInt(br.readLine());
-		
-		StringBuilder sb = new StringBuilder();
+
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		for(int i = 0; i < N; i++) {
-			String input = br.readLine();
-			sb.append(isPalindrome(input) + " " + time(input)+ "\n");
-		
+			int input = Integer.parseInt(st.nextToken());
+			
+			map.put(input, 1);
 		}
 		
+		int M = Integer.parseInt(br.readLine());
+		
+		StringTokenizer st2 = new StringTokenizer(br.readLine());
+		StringBuilder sb = new StringBuilder();
+		int temp = 0;
+		for(int i = 0; i < M; i++) {
+			int input = Integer.parseInt(st2.nextToken());
+			temp = map.getOrDefault(input, 0) + 1;
+			if(temp > 1) {
+				sb.append(1 + "\n");
+			}else {
+				sb.append(0 + "\n");
+			}
+			
+			
+			
+			
+		}
 		System.out.println(sb);
+		
+
+
+//		int N = Integer.parseInt(br.readLine());
+//		
+//		StringBuilder sb = new StringBuilder();
+//		for(int i = 0; i < N; i++) {
+//			String input = br.readLine();
+//			sb.append(isPalindrome(input) + " " + time(input)+ "\n");
+//		
+//		}
+//		
+//		System.out.println(sb);
 		
 		
 		
